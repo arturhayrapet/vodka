@@ -27,6 +27,7 @@ class AppAsset extends AssetBundle
         'js/gallery.js',
         'js/post.js',
         'js/custom.js',
+        'js/modal.js'
     ];
     public $depends = [
         'yii\web\YiiAsset',

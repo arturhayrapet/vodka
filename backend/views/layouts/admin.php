@@ -90,6 +90,24 @@ $this_user = Yii::$app->user->identity;
                                     <span class="sidebar-text"><?php echo Yii::t('app', 'Menu'); ?></span></a>
                             </li>
                         <?php endif; ?>
+                        <?php if (Yii::$app->user->identity->can('Media', 'read')): ?>
+                            <li class="<?php echo Yii::$app->controller->id == "media" ? "current" : ""; ?>">
+                                <a href="<?php echo Url::to(['media/index']) ?>"><i class="fa fa-bars "></i>
+                                    <span class="sidebar-text"><?php echo Yii::t('app', 'Media'); ?></span></a>
+                            </li>
+                        <?php endif; ?>
+                        <?php if (Yii::$app->user->identity->can('Post', 'read')): ?>
+                            <li class="<?php echo Yii::$app->controller->id == "post" ? "current" : ""; ?>">
+                                <a href="<?php echo Url::to(['post/index']) ?>"><i class="fa fa-bars "></i>
+                                    <span class="sidebar-text"><?php echo Yii::t('app', 'Post'); ?></span></a>
+                            </li>
+                        <?php endif; ?>
+                        <?php if (Yii::$app->user->identity->can('Product', 'read')): ?>
+                            <li class="<?php echo Yii::$app->controller->id == "product" ? "current" : ""; ?>">
+                                <a href="<?php echo Url::to(['product/index']) ?>"><i class="fa fa-bars "></i>
+                                    <span class="sidebar-text"><?php echo Yii::t('app', 'Product'); ?></span></a>
+                            </li>
+                        <?php endif; ?>
                     </ul>
                 </div>
             </nav>
