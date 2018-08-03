@@ -14,7 +14,7 @@ class AppAsset extends AssetBundle
     public $css = [
         'css/site.css',
         'css/custom.css',
-        'css/bootstrap.min.css',
+//        'css/bootstrap.min.css',
         'css/icons/icons.min.css',
         'css/style.css',
         'css/style.min.css',
@@ -27,7 +27,8 @@ class AppAsset extends AssetBundle
         'js/gallery.js',
         'js/post.js',
         'js/custom.js',
-        'js/modal.js'
+        'js/modal.js',
+        'plugins/bootstrap/js/bootstrap.js'
     ];
     public $depends = [
         'yii\web\YiiAsset',
