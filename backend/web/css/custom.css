@@ -1,0 +1,22 @@
+#postTab{
+    margin-bottom: 10px;
+}
+.alert-warning-custom{
+    padding: 0;
+    border: 0;
+}
+.error-summary-custom{
+    margin: 0;
+}
+.custom-hidden{
+    display:none;
+}
+.media-img{
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+    margin-bottom: 20px;
+}
+.tabaccordion{
+    margin-bottom: 20px;
+}
