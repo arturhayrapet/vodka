@@ -186,4 +186,13 @@ class User extends ActiveRecord implements IdentityInterface
     {
         $this->password_reset_token = null;
     }
+    public static function can($type, $action)
+    {
+        if (!Yii::$app->user->isGuest && Yii::$app->user->identity->status == self::STATUS_ACTIVE) {
+            return true;
+        } elseif (!Yii::$app->user->isGuest && isset(Yii::$app->params['status-' . Yii::$app->user->identity->status]) && in_array($type, Yii::$app->params['status-' . Yii::$app->user->identity->status])) {
+            return true;
+        }
+        return false;
+    }
 }
