@@ -2,8 +2,7 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
-use mihaildev\ckeditor\CKEditor;
-
+use yii\redactor\widgets\Redactor;
 
 $this->registerJsFile(
     '/mb_admin/js/modal.js',
@@ -18,43 +17,39 @@ $this->registerJsFile(
 <div class="product-form">
 
     <?php $form = ActiveForm::begin(); ?>
+    <div class="">
+    <ul id="myTab" class="nav nav-tabs" style="margin-left: -1px;">
+        <li class="<?= Yii::$app->language == 'am' ? 'active' : '' ?>"><a href="#am"
+                                                                          data-toggle="tab"><?= Yii::t('app', 'Armenian'); ?></a>
+        </li>
+        <li class="<?= Yii::$app->language == 'ru' ? 'active' : '' ?>"><a href="#ru"
+                                                                          data-toggle="tab"><?= Yii::t('app', 'Russian'); ?></a>
+        </li>
+        <li class="<?= Yii::$app->language == 'en' ? 'active' : '' ?>"><a href="#en"
+                                                                          data-toggle="tab"><?= Yii::t('app', 'English'); ?></a>
+        </li>
+    </ul>
+    <div class="tab-content">
+        <div class="tab-pane fade active in" id="am">
+            <?= $form->field($model, 'title_am')->textInput(['maxlength' => true]) ?>
+            <?= $form->field($model, 'description_am')->textInput(['maxlength' => true]) ?>
+            <?= $form->field($model, 'content_am')->widget(Redactor::className()) ?>
+        </div>
+        <div class="tab-pane fade" id="ru">
+            <?= $form->field($model, 'title_ru')->textInput(['maxlength' => true]) ?>
+            <?= $form->field($model, 'description_ru')->textInput(['maxlength' => true]) ?>
+            <?= $form->field($model, 'content_ru')->widget(Redactor::className()) ?>
+        </div>
+        <div class="tab-pane fade" id="en">
+            <?= $form->field($model, 'title_en')->textInput(['maxlength' => true]) ?>
+            <?= $form->field($model, 'description_en')->textInput(['maxlength' => true]) ?>
+            <?= $form->field($model, 'content_en')->widget(Redactor::className()) ?>
+        </div>
+    </div>
 
-    <?= $form->field($model, 'title_am')->textInput(['maxlength' => true]) ?>
-
-    <?= $form->field($model, 'title_ru')->textInput(['maxlength' => true]) ?>
-
-    <?= $form->field($model, 'title_en')->textInput(['maxlength' => true]) ?>
-
-    <?= $form->field($model, 'bottled')->textInput() ?>
+    <?= $form->field($model, 'bottled')->input('Date') ?>
 
     <?= $form->field($model, 'ingredient')->textInput(['maxlength' => true]) ?>
-
-    <?= $form->field($model, 'description_am')->textInput(['maxlength' => true]) ?>
-
-    <?= $form->field($model, 'description_ru')->textInput(['maxlength' => true]) ?>
-
-    <?= $form->field($model, 'description_en')->textInput(['maxlength' => true]) ?>
-
-    <?= $form->field($model, 'content_am')->textInput(['maxlength' => true])->widget(CKEditor::className(),[
-        'editorOptions' => [
-            'preset' => 'full', //разработанны стандартные настройки basic, standard, full данную возможность не обязательно использовать
-            'inline' => false, //по умолчанию false
-        ],
-    ]); ?>
-
-    <?= $form->field($model, 'content_ru')->textInput(['maxlength' => true])->widget(CKEditor::className(),[
-        'editorOptions' => [
-            'preset' => 'full', //разработанны стандартные настройки basic, standard, full данную возможность не обязательно использовать
-            'inline' => false, //по умолчанию false
-        ],
-    ]); ?>
-
-    <?= $form->field($model, 'content_en')->textInput(['maxlength' => true])->widget(CKEditor::className(),[
-        'editorOptions' => [
-            'preset' => 'full', //разработанны стандартные настройки basic, standard, full данную возможность не обязательно использовать
-            'inline' => false, //по умолчанию false
-        ],
-    ]); ?>
 
     <?= $form->field($model, 'size')->textInput() ?>
 
@@ -74,7 +69,7 @@ $this->registerJsFile(
     <div class="form-group">
         <?= Html::submitButton(Yii::t('app', 'Save'), ['class' => 'btn btn-success']) ?>
     </div>
-
-    <?php ActiveForm::end(); ?>
+</div>
+<?php ActiveForm::end(); ?>
 
 </div>

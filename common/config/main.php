@@ -10,4 +10,12 @@ return [
             'class' => 'yii\caching\FileCache',
         ],
     ],
+    'modules' => [
+        'redactor' => [
+            'class' => 'yii\redactor\RedactorModule',
+            'uploadDir' => '@webroot/uploads',
+            'uploadUrl' => '@web/uploads',
+            'imageAllowExtensions'=>['jpg','png','gif']
+        ],
+    ],
 ];

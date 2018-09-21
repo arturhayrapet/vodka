@@ -39,6 +39,10 @@ $this_user = Yii::$app->user->identity;
                     </a>
                     <a class="domain" href="<?php \yii\helpers\Url::base(); ?>">Mijnaberd</a>
                 </div>
+                <div class="navbar-center">Dashboard
+                    <a href="/admin_v/site/change-language?lang=am">AM</a>
+                    <a href="/admin_v/site/change-language?lang=en">EN</a>
+                </div>
                 <div class="navbar-center">
                 </div>
                 <div class="navbar-collapse collapse">
@@ -88,26 +92,20 @@ $this_user = Yii::$app->user->identity;
                         <?php endif; ?>
                         <?php if (Yii::$app->user->identity->can('Media', 'read')): ?>
                             <li class="<?php echo Yii::$app->controller->id == "media" ? "current" : ""; ?>">
-                                <a href="<?php echo Url::to(['media/index']) ?>"><i class="fa fa-bars "></i>
+                                <a href="<?php echo Url::to(['media/index']) ?>"><i class="fa fa-image "></i>
                                     <span class="sidebar-text"><?php echo Yii::t('app', 'Media'); ?></span></a>
                             </li>
                         <?php endif; ?>
                         <?php if (Yii::$app->user->identity->can('Post', 'read')): ?>
                             <li class="<?php echo Yii::$app->controller->id == "post" ? "current" : ""; ?>">
-                                <a href="<?php echo Url::to(['post/index']) ?>"><i class="fa fa-bars "></i>
+                                <a href="<?php echo Url::to(['post/index']) ?>"><i class="fa fa-pencil "></i>
                                     <span class="sidebar-text"><?php echo Yii::t('app', 'Post'); ?></span></a>
                             </li>
                         <?php endif; ?>
                         <?php if (Yii::$app->user->identity->can('Product', 'read')): ?>
                             <li class="<?php echo Yii::$app->controller->id == "product" ? "current" : ""; ?>">
-                                <a href="<?php echo Url::to(['product/index']) ?>"><i class="fa fa-bars "></i>
+                                <a href="<?php echo Url::to(['product/index']) ?>"><i class="fa fa-bank "></i>
                                     <span class="sidebar-text"><?php echo Yii::t('app', 'Product'); ?></span></a>
-                            </li>
-                        <?php endif; ?>
-                        <?php if (Yii::$app->user->identity->can('Settings', 'read')): ?>
-                            <li class="<?php echo Yii::$app->controller->id == "settings" ? "current" : ""; ?>">
-                                <a href="<?php echo Url::to(['settings/index']) ?>"><i class="fa fa-bars "></i>
-                                    <span class="sidebar-text"><?php echo Yii::t('app', 'Settings'); ?></span></a>
                             </li>
                         <?php endif; ?>
                     </ul>
