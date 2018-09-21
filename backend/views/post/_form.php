@@ -32,21 +32,21 @@ $this->registerJsFile(
 
     <?= $form->field($model, 'content_am')->textarea(['rows' => 6])->widget(CKEditor::className(),[
         'editorOptions' => [
-            'preset' => 'basic', //разработанны стандартные настройки basic, standard, full данную возможность не обязательно использовать
+            'preset' => 'full', //разработанны стандартные настройки basic, standard, full данную возможность не обязательно использовать
             'inline' => false, //по умолчанию false
         ],
     ]); ?>
 
     <?= $form->field($model, 'content_ru')->textarea(['rows' => 6])->widget(CKEditor::className(),[
         'editorOptions' => [
-            'preset' => 'basic', //разработанны стандартные настройки basic, standard, full данную возможность не обязательно использовать
+            'preset' => 'full', //разработанны стандартные настройки basic, standard, full данную возможность не обязательно использовать
             'inline' => false, //по умолчанию false
         ],
     ]); ?>
 
     <?= $form->field($model, 'content_en')->textarea(['rows' => 6])->widget(CKEditor::className(),[
         'editorOptions' => [
-            'preset' => 'basic', //разработанны стандартные настройки basic, standard, full данную возможность не обязательно использовать
+            'preset' => 'full', //разработанны стандартные настройки basic, standard, full данную возможность не обязательно использовать
             'inline' => false, //по умолчанию false
         ],
     ]); ?>

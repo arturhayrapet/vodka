@@ -17,9 +17,11 @@ use Yii;
  * @property string $description_en
  * @property int $type
  * @property string $unique_name
+ * @property string $oldLink
  */
 class Media extends \yii\db\ActiveRecord
 {
+    public  $oldLink;
     /**
      * {@inheritdoc}
      */
@@ -34,11 +36,15 @@ class Media extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['img','title_am','description_am'],'required'],
+            ['img' , 'required' ,
+                'when' => function($model){ return $model->oldLink == null;},
+                'whenClient' => "function (attribute, value) { return $('#products-oldLink').val() == ''; }"],
+            [['title_am','description_am'],'required'],
             [['description_am', 'description_ru', 'description_en'], 'string'],
             [['type'], 'integer'],
             [['title_am', 'title_ru', 'title_en', 'unique_name'], 'string', 'max' => 255],
-            [['img'],'file'],
+            [['img'], 'file'],
+            [['oldLink'], 'safe'],
         ];
     }
 
@@ -73,6 +79,8 @@ class Media extends \yii\db\ActiveRecord
             'description_en' => Yii::t('app', 'Description En'),
             'type' => Yii::t('app', 'Type'),
             'unique_name' => Yii::t('app', 'Unique Name'),
+            'oldLink' => Yii::t('app', 'Unique Name'),
+
         ];
     }
 }

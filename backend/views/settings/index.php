@@ -4,19 +4,19 @@ use yii\helpers\Html;
 use yii\grid\GridView;
 
 /* @var $this yii\web\View */
-/* @var $searchModel common\models\MenuSearch */
+/* @var $searchModel common\models\SettingsSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = Yii::t('app', 'Menus');
+$this->title = Yii::t('app', 'Settings');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="menu-index">
+<div class="settings-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a(Yii::t('app', 'Create Menu'), ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a(Yii::t('app', 'Create Settings'), ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?= GridView::widget([
@@ -26,10 +26,10 @@ $this->params['breadcrumbs'][] = $this->title;
             ['class' => 'yii\grid\SerialColumn'],
 
             'id',
-            'name_am',
-            'name_en',
-            'name_ru',
-            //'url:url',
+            'kay',
+            'value_am',
+            'value_ru',
+            'value_en',
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

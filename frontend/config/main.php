@@ -14,7 +14,7 @@ return [
     'components' => [
         'request' => [
             'csrfParam' => '_csrf-frontend',
-            'baseUrl' => '/'
+            'baseUrl' => ''
         ],
         'user' => [
             'identityClass' => 'common\models\User',
@@ -37,14 +37,15 @@ return [
         'errorHandler' => [
             'errorAction' => 'site/error',
         ],
-        /*
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
+                '<controller>/<action>' => '<controller>/<action>',
+                '<controller>/<action>/<id:\d+>' => '<controller>/<action>',
             ],
         ],
-        */
+
     ],
     'params' => $params,
 ];

@@ -2,6 +2,8 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+use mihaildev\ckeditor\CKEditor;
+
 
 $this->registerJsFile(
     '/mb_admin/js/modal.js',
@@ -33,11 +35,26 @@ $this->registerJsFile(
 
     <?= $form->field($model, 'description_en')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'content_am')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'content_am')->textInput(['maxlength' => true])->widget(CKEditor::className(),[
+        'editorOptions' => [
+            'preset' => 'full', //разработанны стандартные настройки basic, standard, full данную возможность не обязательно использовать
+            'inline' => false, //по умолчанию false
+        ],
+    ]); ?>
 
-    <?= $form->field($model, 'content_ru')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'content_ru')->textInput(['maxlength' => true])->widget(CKEditor::className(),[
+        'editorOptions' => [
+            'preset' => 'full', //разработанны стандартные настройки basic, standard, full данную возможность не обязательно использовать
+            'inline' => false, //по умолчанию false
+        ],
+    ]); ?>
 
-    <?= $form->field($model, 'content_en')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'content_en')->textInput(['maxlength' => true])->widget(CKEditor::className(),[
+        'editorOptions' => [
+            'preset' => 'full', //разработанны стандартные настройки basic, standard, full данную возможность не обязательно использовать
+            'inline' => false, //по умолчанию false
+        ],
+    ]); ?>
 
     <?= $form->field($model, 'size')->textInput() ?>
 

@@ -35,7 +35,6 @@ $this->params['breadcrumbs'][] = $this->title;
             //'description_en:ntext',
             //'type',
             //'unique_name',
-
             ['class' => 'yii\grid\ActionColumn'],
         ],
     ]); ?>

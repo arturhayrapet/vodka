@@ -20,13 +20,9 @@ use dosamigos\ckeditor\CKEditor;
 
     <?= $form->field($model, 'name_ru')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'type')->textInput(['maxlength' => true]) ?>
-
-    <?= $form->field($model, 'type_id')->textInput() ?>
-
     <?= $form->field($model, 'url')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'position')->dropDownList(['maxlength' => true]) ?>
+    <?= $form->field($model, 'position')->dropDownList([1,2,3],['maxlength' => true]) ?>
 
     <div class="form-group">
         <?= Html::submitButton(Yii::t('app', 'Save'), ['class' => 'btn btn-success']) ?>

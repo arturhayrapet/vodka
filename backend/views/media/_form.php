@@ -28,6 +28,8 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'type')->dropDownList([1,2,3],['prompt' => 'choose type ...']) ?>
 
+    <?= $form->field($model, 'oldLink')->hiddenInput()->label(false) ?>
+
     <div class="form-group">
         <?= Html::submitButton(Yii::t('app', 'Save'), ['class' => 'btn btn-success']) ?>
     </div>

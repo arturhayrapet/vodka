@@ -100,6 +100,7 @@ class MediaController extends Controller
         $model = $this->findModel($id);
         $u_n = $model->unique_name ;
         $ex = $model->img;
+        $model->oldLink = $u_n;
 
         if ($model->load(Yii::$app->request->post()))
         {

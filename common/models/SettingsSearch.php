@@ -5,12 +5,12 @@ namespace common\models;
 use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use common\models\Menu;
+use common\models\Settings;
 
 /**
- * MenuSearch represents the model behind the search form of `common\models\Menu`.
+ * SettingsSearch represents the model behind the search form of `common\models\Settings`.
  */
-class MenuSearch extends Menu
+class SettingsSearch extends Settings
 {
     /**
      * {@inheritdoc}
@@ -18,8 +18,8 @@ class MenuSearch extends Menu
     public function rules()
     {
         return [
-            [['id','position'], 'integer'],
-            [['name_am', 'name_en', 'name_ru', 'url'], 'safe'],
+            [['id'], 'integer'],
+            [['kay', 'value_am', 'value_ru', 'value_en'], 'safe'],
         ];
     }
 
@@ -41,7 +41,7 @@ class MenuSearch extends Menu
      */
     public function search($params)
     {
-        $query = Menu::find();
+        $query = Settings::find();
 
         // add conditions that should always apply here
 
@@ -62,10 +62,10 @@ class MenuSearch extends Menu
             'id' => $this->id,
         ]);
 
-        $query->andFilterWhere(['like', 'name_am', $this->name_am])
-            ->andFilterWhere(['like', 'name_en', $this->name_en])
-            ->andFilterWhere(['like', 'name_ru', $this->name_ru])
-            ->andFilterWhere(['like', 'url', $this->url]);
+        $query->andFilterWhere(['like', 'kay', $this->kay])
+            ->andFilterWhere(['like', 'value_am', $this->value_am])
+            ->andFilterWhere(['like', 'value_ru', $this->value_ru])
+            ->andFilterWhere(['like', 'value_en', $this->value_en]);
 
         return $dataProvider;
     }
