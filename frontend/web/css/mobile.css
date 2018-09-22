@@ -1,0 +1,18 @@
+@media screen and (max-width: 768px) {
+    .sec1_bg{
+        height:auto;
+        width: 100%;
+    }
+
+    .fade-carousel .slides .slide-1 {
+        width: 100%;
+    }
+
+    .fade-carousel .slides .slide-2 {
+        width: 100%;
+    }
+
+    .fade-carousel .slides .slide-3 {
+        width: 100%;
+    }
+}

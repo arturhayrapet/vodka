@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1920.009 1215.834">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+        stroke: #707070;
+      }
+
+      .cls-2 {
+        fill: url(#linear-gradient);
+      }
+
+      .cls-3 {
+        fill: url(#linear-gradient-2);
+      }
+
+      .cls-4 {
+        fill: #f8f8f8;
+      }
+
+      .cls-5 {
+        clip-path: url(#clip-path);
+      }
+
+      .cls-6 {
+        fill: #e4e4e4;
+      }
+    </style>
+    <linearGradient id="linear-gradient" x1="0.509" y1="1.075" x2="0.507" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#040d31"/>
+      <stop offset="0.912" stop-color="#042e55"/>
+      <stop offset="1" stop-color="#043158" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="0.031" y1="0.021" x2="0.914" y2="0.6" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#6876f5"/>
+      <stop offset="1" stop-color="#4843de"/>
+    </linearGradient>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_166" data-name="Rectangle 166" class="cls-1" width="160" height="357" transform="translate(1760 3420)"/>
+    </clipPath>
+  </defs>
+  <g id="Group_263" data-name="Group 263" transform="translate(0.009 -3106.868)">
+    <path id="_4-7" data-name="4-7" class="cls-2" d="M2280.447-86.737,360.437-84.281V944.27L1789.319,1129.1l491.127-416.142V-86.737Z" transform="translate(-360.447 3193.605)"/>
+    <g id="_4x1" data-name="4x1">
+      <rect id="_4-1" data-name="4-1" class="cls-3" width="11.152" height="336.406" rx="5.576" transform="matrix(0.819, -0.574, 0.574, 0.819, 1116.881, 3176.009)"/>
+      <rect id="_4-3" data-name="4-3" class="cls-4" width="12.731" height="139.395" rx="6.366" transform="matrix(0.809, -0.588, 0.588, 0.809, 31.461, 3490.666)"/>
+      <g id="_4-2" data-name="4-2" class="cls-5" transform="translate(0 -192)">
+        <rect id="Rectangle_7_Copy_13" data-name="Rectangle 7 Copy 13" class="cls-6" width="16.727" height="130.102" rx="8.364" transform="matrix(0.819, -0.574, 0.574, 0.819, 1822.034, 3621.441)"/>
+        <rect id="Rectangle_7_Copy_10" data-name="Rectangle 7 Copy 10" class="cls-6" width="35.313" height="743.438" rx="15" transform="matrix(0.819, -0.574, 0.574, 0.819, 1793.659, 3468.701)"/>
+      </g>
+    </g>
+  </g>
+</svg>
