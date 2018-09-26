@@ -163,11 +163,70 @@
 <div>
     <img src="images/5-7.png" alt="" width="100%">
 </div>
-<section class="sec_gallery">
+<!--    GALLERY  ------------------------------------------------------>
+
+
+<section id="gallery" class="sec_gallery">
     <h1>GALLERY</h1>
-
-
+    <div class="row">
+        <div id="gallery_slider_wrp" class="container">
+            <div class="galery">
+                <div class="slide">
+                    <ul class="slide_ul">
+                        <li class="slide_li">
+                            <img src="/images/gallery/01.png" alt=""> </li>
+                        <li class="slide_li">
+                            <img src="/images/gallery/02.png" alt=""> </li>
+                        <li class="slide_li">
+                            <img src="/images/gallery/03.png" alt=""> </li>
+                        <li class="slide_li">
+                            <img src="/images/gallery/04.png" alt=""></li>
+                        <li class="slide_li">
+                            <img src="/images/gallery/05.png" alt=""></li>
+                        <li class="slide_li">
+                            <img src="/images/gallery/06.png" alt=""></li>
+                        <li class="slide_li">
+                            <img src="/images/gallery/07.png" alt=""></li>
+                        <li class="slide_li">
+                            <img src="/images/gallery/08.png" alt=""> </li>
+                        <li class="slide_li">
+                            <img src="/images/gallery/09.png" alt=""> </li>
+                        <li class="slide_li">
+                            <img src="/images/gallery/10.png" alt=""> </li>
+                        <li class="slide_li">
+                            <img src="/images/gallery/11.png" alt="">
+                        </li>
+                        <li class="slide_li">
+                            <img src="/images/gallery/12.png" alt=""> </li>
+                        <li class="slide_li">
+                            <img src="/images/gallery/02.png" alt=""> </li>
+                        <li class="slide_li">
+                            <img src="/images/gallery/03.png" alt="">
+                        </li>
+                        <li class="slide_li">
+                            <img src="/images/gallery/11.png" alt="">
+                        </li>
+                        <li class="slide_li">
+                            <img src="/images/gallery/12.png" alt=""></li>
+                        <li class="slide_li">
+                            <img src="/images/gallery/02.png" alt="">
+                        </li>
+                        <li class="slide_li">
+                            <img src="/images/gallery/03.png" alt="">
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="gal_btn_prev"><img src="/images/gallery/acard-left.png" alt=""></div>
+            <div class="gal_btn_next"><img src="/images/gallery/acard-right.png" alt=""></div>
+        </div>
+    </div>
 </section>
+
+<!--     GALLERY  END  ------------------------------------------------>
+
+
+
 <section class="sec_news">
     <img src="images/newsBG.svg" alt="" class="news_bg">
     <h1>NEWS</h1>
@@ -272,4 +331,5 @@
             }
         }, 4000);
     });
+
 ")?>
