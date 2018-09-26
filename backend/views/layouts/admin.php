@@ -108,6 +108,12 @@ $this_user = Yii::$app->user->identity;
                                     <span class="sidebar-text"><?php echo Yii::t('app', 'Product'); ?></span></a>
                             </li>
                         <?php endif; ?>
+                        <?php if (Yii::$app->user->identity->can('Settings', 'read')): ?>
+                            <li class="<?php echo Yii::$app->controller->id == "settings" ? "current" : ""; ?>">
+                                <a href="<?php echo Url::to(['settings/index']) ?>"><i class="fa fa-bank "></i>
+                                    <span class="sidebar-text"><?php echo Yii::t('app', 'Settings'); ?></span></a>
+                            </li>
+                        <?php endif; ?>
                     </ul>
                 </div>
             </nav>
