@@ -168,63 +168,60 @@
 
 <section id="gallery" class="sec_gallery">
     <h1>GALLERY</h1>
-    <div class="row">
-        <div id="gallery_slider_wrp" class="container">
-            <div class="galery">
-                <div class="slide">
-                    <ul class="slide_ul">
-                        <li class="slide_li">
-                            <img src="/images/gallery/01.png" alt=""> </li>
-                        <li class="slide_li">
-                            <img src="/images/gallery/02.png" alt=""> </li>
-                        <li class="slide_li">
-                            <img src="/images/gallery/03.png" alt=""> </li>
-                        <li class="slide_li">
-                            <img src="/images/gallery/04.png" alt=""></li>
-                        <li class="slide_li">
-                            <img src="/images/gallery/05.png" alt=""></li>
-                        <li class="slide_li">
-                            <img src="/images/gallery/06.png" alt=""></li>
-                        <li class="slide_li">
-                            <img src="/images/gallery/07.png" alt=""></li>
-                        <li class="slide_li">
-                            <img src="/images/gallery/08.png" alt=""> </li>
-                        <li class="slide_li">
-                            <img src="/images/gallery/09.png" alt=""> </li>
-                        <li class="slide_li">
-                            <img src="/images/gallery/10.png" alt=""> </li>
-                        <li class="slide_li">
-                            <img src="/images/gallery/11.png" alt="">
-                        </li>
-                        <li class="slide_li">
-                            <img src="/images/gallery/12.png" alt=""> </li>
-                        <li class="slide_li">
-                            <img src="/images/gallery/02.png" alt=""> </li>
-                        <li class="slide_li">
-                            <img src="/images/gallery/03.png" alt="">
-                        </li>
-                        <li class="slide_li">
-                            <img src="/images/gallery/11.png" alt="">
-                        </li>
-                        <li class="slide_li">
-                            <img src="/images/gallery/12.png" alt=""></li>
-                        <li class="slide_li">
-                            <img src="/images/gallery/02.png" alt="">
-                        </li>
-                        <li class="slide_li">
-                            <img src="/images/gallery/03.png" alt="">
-                        </li>
-                    </ul>
-                </div>
+    <div id="gallery_slider_wrp" class="container">
+        <div class="galery">
+            <div class="slide">
+                <ul class="slide_ul">
+                    <li class="slide_li">
+                        <img src="/images/gallery/01.png" alt=""></li>
+                    <li class="slide_li">
+                        <img src="/images/gallery/02.png" alt=""></li>
+                    <li class="slide_li">
+                        <img src="/images/gallery/03.png" alt=""></li>
+                    <li class="slide_li">
+                        <img src="/images/gallery/04.png" alt=""></li>
+                    <li class="slide_li">
+                        <img src="/images/gallery/05.png" alt=""></li>
+                    <li class="slide_li">
+                        <img src="/images/gallery/06.png" alt=""></li>
+                    <li class="slide_li">
+                        <img src="/images/gallery/07.png" alt=""></li>
+                    <li class="slide_li">
+                        <img src="/images/gallery/08.png" alt=""></li>
+                    <li class="slide_li">
+                        <img src="/images/gallery/09.png" alt=""></li>
+                    <li class="slide_li">
+                        <img src="/images/gallery/10.png" alt=""></li>
+                    <li class="slide_li">
+                        <img src="/images/gallery/11.png" alt="">
+                    </li>
+                    <li class="slide_li">
+                        <img src="/images/gallery/12.png" alt=""></li>
+                    <li class="slide_li">
+                        <img src="/images/gallery/02.png" alt=""></li>
+                    <li class="slide_li">
+                        <img src="/images/gallery/03.png" alt="">
+                    </li>
+                    <li class="slide_li">
+                        <img src="/images/gallery/11.png" alt="">
+                    </li>
+                    <li class="slide_li">
+                        <img src="/images/gallery/12.png" alt=""></li>
+                    <li class="slide_li">
+                        <img src="/images/gallery/02.png" alt="">
+                    </li>
+                    <li class="slide_li">
+                        <img src="/images/gallery/03.png" alt="">
+                    </li>
+                </ul>
             </div>
-            <div class="gal_btn_prev"><img src="/images/gallery/acard-left.png" alt=""></div>
-            <div class="gal_btn_next"><img src="/images/gallery/acard-right.png" alt=""></div>
         </div>
+        <div class="gal_btn_prev"><img src="/images/gallery/acard-left.png" alt=""></div>
+        <div class="gal_btn_next"><img src="/images/gallery/acard-right.png" alt=""></div>
     </div>
 </section>
 
 <!--     GALLERY  END  ------------------------------------------------>
-
 
 
 <section class="sec_news">
@@ -233,8 +230,11 @@
     <div class="container">
         <div class="col-md-6 col-xs-12 post_box_col">
             <div class=" col-md-12 post_box">
-                <div class="col-md-2">01</div>
-                <div class="col-md-10 text_style">
+                <div class="col-md-3 post_number">
+                    <img src='/images/post.svg' alt="">
+                    <span>01</span>
+                </div>
+                <div class="col-md-9 text_style">
                     <b>Lorem ipsum.</b>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci laboriosam modi quidem.
                         Blanditiis culpa dignissimos eveniet excepturi molestias nesciunt nobis perspiciatis repellendus
@@ -248,8 +248,11 @@
         </div>
         <div class="col-md-6 col-xs-12 post_box_col">
             <div class="col-md-12 post_box">
-                <div class="col-md-2">01</div>
-                <div class="col-md-10 text_style">
+                <div class="col-md-3 post_number">
+                    <img src='/images/post.svg' alt="">
+                    <span>01</span>
+                </div>
+                <div class="col-md-9 text_style">
                     <b>Lorem ipsum.</b>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci laboriosam modi quidem.
                         Blanditiis culpa dignissimos eveniet excepturi molestias nesciunt nobis perspiciatis repellendus
@@ -263,8 +266,11 @@
         </div>
         <div class="col-md-6 col-xs-12 post_box_col">
             <div class="col-md-12 post_box">
-                <div class="col-md-2">01</div>
-                <div class="col-md-10 text_style">
+                <div class="col-md-3 post_number">
+                    <img src='/images/post.svg' alt="">
+                    <span>01</span>
+                </div>
+                <div class="col-md-9 text_style">
                     <b>Lorem ipsum.</b>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci laboriosam modi quidem.
                         Blanditiis culpa dignissimos eveniet excepturi molestias nesciunt nobis perspiciatis repellendus
@@ -278,8 +284,11 @@
         </div>
         <div class="col-md-6 col-xs-12 post_box_col">
             <div class="col-md-12 post_box">
-                <div class="col-md-2">01</div>
-                <div class="col-md-10 text_style">
+                <div class="col-md-3 post_number">
+                    <img src='/images/post.svg' alt="">
+                    <span>01</span>
+                </div>
+                <div class="col-md-9 text_style">
                     <b>Lorem ipsum.</b>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci laboriosam modi quidem.
                         Blanditiis culpa dignissimos eveniet excepturi molestias nesciunt nobis perspiciatis repellendus
@@ -303,12 +312,14 @@
         <div class="sub_right">
             <div class="sub_right_style">
                 <p><b>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At, dicta.</b></p>
-                <p class="sub_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam asperiores, commodi dolor earum
+                <p class="sub_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam asperiores,
+                    commodi dolor earum
                     eius,
                     error, ipsum magni minima minus quas quidem sunt suscipit veritatis vero voluptatem. Ad culpa
                     distinctio
                     dolorum excepturi harum ipsam ipsum neque nobis numquam qui quia, sunt?</p>
-                <input type="text" class="sub_input"><button class="sub_btn">send</button>
+                <input type="text" class="sub_input">
+                <button class="sub_btn">send</button>
             </div>
         </div>
     </div>
@@ -332,4 +343,4 @@
         }, 4000);
     });
 
-")?>
+") ?>
