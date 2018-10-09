@@ -28,7 +28,7 @@ $this->params['breadcrumbs'][] = $this->title;
     if($model->media)
         $media = [
             'attribute'=>'photo',
-            'value'=> Yii::$app->homeUrl.'uploads/'.$model->media->unique_name,
+            'value'=> '/uploads/'.$model->media->unique_name,
             'format' => ['image',['height'=>'50']]
             ];
 
@@ -55,7 +55,16 @@ $this->params['breadcrumbs'][] = $this->title;
             $media,
             'size',
             'degree',
-            'type',
+            [
+                'attribute' => 'type',
+                'value' => function ($model) {
+                    if ($model->type == 0) {
+                        return 'Product';
+                    } else {
+                        return 'Aromat';
+                    }
+                }
+            ],
         ],
     ]) ?>
 

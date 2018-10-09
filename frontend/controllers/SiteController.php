@@ -1,6 +1,12 @@
 <?php
+
 namespace frontend\controllers;
 
+use common\models\Media;
+use common\models\Menu;
+use common\models\Post;
+use common\models\Product;
+use common\models\Settings;
 use Yii;
 use yii\base\InvalidParamException;
 use yii\web\BadRequestHttpException;
@@ -73,8 +79,27 @@ class SiteController extends Controller
     public function actionIndex()
     {
         $this->layout = 'new';
-
-        return $this->render('index');
+        $posts = Post::find()->with('media')->orderBy(['id' => SORT_DESC])->limit(4)->all();
+        $products = Product::find()->with('media')->where(['type' => 0])->orderBy(['id' => SORT_DESC])->limit(3)->all();
+        $aromats = Product::find()->with('media')->where(['type' => 1])->orderBy(['id' => SORT_DESC])->limit(3)->all();
+        $technology = Settings::find()->where(['kay' => ['technology_sub', 'technology_text']])->all();
+        $slider1 = Media::find()->where(['type' => '1'])->orderBy(['id' => SORT_DESC])->all();
+        $slider2 = Media::find()->where(['type' => '2'])->orderBy(['id' => SORT_DESC])->all();
+        $gallery = Media::find()->where(['type' => '3'])->orderBy(['id' => SORT_DESC])->all();
+        $slider2_text = Settings::find()->where(['kay' => 'slider2_text'])->one();
+        $subscribe = Settings::find()->where(['kay' => ['subscribe_photo', 'subscribe_title', 'subscribe_text']])->all();
+//        var_dump($technology);die;
+        return $this->render('index', [
+            'posts' => $posts,
+            'products' => $products,
+            'technology' => $technology,
+            'aromats' => $aromats,
+            'slider1' => $slider1,
+            'slider2' => $slider2,
+            'slider2_text' => $slider2_text,
+            'subscribe' => $subscribe,
+            'gallery' => $gallery,
+        ]);
     }
 
     /**
@@ -213,5 +238,21 @@ class SiteController extends Controller
         return $this->render('resetPassword', [
             'model' => $model,
         ]);
+    }
+
+    public function actionPost($id)
+    {
+        $this->layout = 'post';
+        $post = Post::find()->with('media')->where(['id' => $id])->one();
+        $posts = Post::find()->with('media')->orderBy(['id' => SORT_DESC])->limit(3)->all();
+        return $this->render('post', ['post' => $post, 'posts' => $posts]);
+    }
+
+    public function actionProduct($id)
+    {
+        $this->layout = 'post';
+        $product = Product::find()->with('media')->where(['id' => $id])->one();
+        $products = Product::find()->with('media')->where(['type' => 0])->orderBy(['id' => SORT_DESC])->limit(3)->all();
+        return $this->render('product', ['product' => $product, 'products' => $products]);
     }
 }

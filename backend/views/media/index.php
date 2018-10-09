@@ -33,8 +33,26 @@ $this->params['breadcrumbs'][] = $this->title;
             //'description_am:ntext',
             //'description_ru:ntext',
             //'description_en:ntext',
-            //'type',
-            //'unique_name',
+            [
+                'attribute' => 'type',
+                'value' => function ($model) {
+                    if ($model->type == 1) {
+                        return 'Slider1';
+                    } elseif ($model->type == 2) {
+                        return 'Slider2';
+                    } elseif ($model->type == 3) {
+                        return 'Gallery';
+                    } else {
+                        return 'Not set';
+                    }
+                }
+            ],
+            [
+                'attribute' => 'unique_name',
+                'value' => function ($model) {
+                    return '/uploads/'.$model->unique_name;
+                }
+            ],
             ['class' => 'yii\grid\ActionColumn'],
         ],
     ]); ?>

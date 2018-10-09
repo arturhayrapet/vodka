@@ -27,9 +27,9 @@ $this->params['breadcrumbs'][] = $this->title;
 
             'id',
             'title_am',
-            'title_ru',
-            'title_en',
-            'bottled',
+//            'title_ru',
+//            'title_en',
+//            'bottled',
             //'ingredient',
             //'description_am',
             //'description_ru',
@@ -40,7 +40,16 @@ $this->params['breadcrumbs'][] = $this->title;
             //'image',
             //'size',
             //'degree',
-            //'type',
+            [
+                'attribute' => 'type',
+                'value' => function ($model) {
+                    if ($model->type == 0) {
+                        return 'Product';
+                    } else {
+                        return 'Aromat';
+                    }
+                }
+            ],
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

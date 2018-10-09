@@ -25,7 +25,6 @@ use Yii;
  * @property int $degree
  * @property string $type
  */
-
 class Product extends \yii\db\ActiveRecord
 {
     /**
@@ -47,10 +46,10 @@ class Product extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['title_am','description_am','content_am', 'image'],'required'],
+            [['title_am', 'description_am', 'content_am', 'image'], 'required'],
             [['bottled'], 'safe'],
             [['size', 'degree'], 'integer'],
-            [['title_am', 'title_ru', 'title_en', 'ingredient', 'description_am', 'description_ru', 'description_en', 'content_am', 'content_ru', 'content_en', 'image', 'type'], 'string', 'max' => 255],
+            [['title_am', 'title_ru', 'title_en', 'ingredient', 'description_am', 'description_ru', 'description_en', 'content_am', 'content_ru', 'content_en', 'image', 'type'], 'string'],
         ];
     }
 
@@ -78,4 +77,5 @@ class Product extends \yii\db\ActiveRecord
             'type' => Yii::t('app', 'Type'),
         ];
     }
+
 }

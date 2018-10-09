@@ -31,7 +31,7 @@ $this->params['breadcrumbs'][] = $this->title;
         [
             [
             'attribute'=>'photo',
-            'value'=> Yii::$app->homeUrl.'uploads/'.$model->unique_name,
+            'value'=> '/uploads/'.$model->unique_name,
             'format' => ['image',['height'=>'50']],
             ],
             'id',

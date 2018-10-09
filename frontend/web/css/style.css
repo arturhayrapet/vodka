@@ -11,7 +11,7 @@
     background-color: transparent !important;
     border: none !important;
     margin-bottom: 0 !important;
-    margin-top: 30px;
+    padding-top: 15px;
 }
 
 #sec1 {
@@ -23,7 +23,8 @@
 header {
     position: fixed;
     width: 100% !important;
-    z-index: 2;
+    z-index: 10;
+    height: 80px;
 }
 
 /*slider*/
@@ -54,8 +55,9 @@ header {
 /********************************/
 .hero {
     position: absolute;
-    top: 50%;
-    left: 50%;
+    top: 35%;
+    right: -50%;
+    /*left: 50%;*/
     z-index: 3;
     color: #fff;
     text-align: center;
@@ -69,7 +71,7 @@ header {
 }
 
 .hero h1 {
-    font-size: 6em;
+    font-size: 4em;
     font-weight: bold;
     margin: 0;
     padding: 0;
@@ -134,8 +136,8 @@ header {
 }
 
 .fade-carousel .slides .slide-1 {
-    background-image: url(../images/shish.png);
-    background-size: 400px auto;
+    /*background-image: url(../images/shish.png);*/
+    background-size: 350px auto;
     width: 60%;
     padding-top: 73px;
     z-index: 5;
@@ -185,7 +187,7 @@ header {
 }
 
 #sec2 {
-    height: 100%;
+    height: auto;
     width: 100%;
 }
 
@@ -234,9 +236,8 @@ header {
 
 #sec3 {
     position: relative;
-    height: 100vh;
+    height: 100%;
     width: 100%;
-    margin-top: -50px;
 }
 
 .about_text {
@@ -347,7 +348,7 @@ header {
 }
 
 .item > img {
-    width: 50%;
+    width: 300px;
     margin: 0 auto;
 }
 
@@ -577,7 +578,7 @@ header {
 .slide_li {
     float: left;
     position: relative;
-    border-left: 1px solid yellow;
+    /*border-left: 1px solid yellow;*/
 }
 
 /*
@@ -597,3 +598,63 @@ header {
     padding: 0;
 }
 
+.hr1, .hr2, .hr3 {
+    width: 40%;
+}
+
+.about_us_cont h1 {
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.about_us_left img {
+    width: 50%;
+    height: 50%;
+}
+
+.about_us_left a:hover {
+    text-decoration: none;
+}
+
+.about_us_left p {
+    font-size: 12px;
+}
+
+.about_us_left {
+    text-align: center;
+}
+
+.product_title {
+    padding-bottom: 50px;
+}
+
+.scroll_technology {
+    position: absolute;
+    top: 22px;
+}
+
+.post_content {
+    min-height: 500px;
+    padding-top: 100px;
+}
+
+.post_title {
+    text-align: center;
+}
+
+.img_div {
+    text-align: center;
+}
+
+.post_text {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.post_header {
+    background-color: #0d173a;
+}
+
+a:hover {
+    text-decoration: none !important;
+}

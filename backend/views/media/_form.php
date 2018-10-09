@@ -40,13 +40,13 @@ use yii\widgets\ActiveForm;
         </div>
 
 
-        <?= $form->field($model, 'type')->dropDownList([1, 2, 3], ['prompt' => 'choose type ...']) ?>
+        <?= $form->field($model, 'type')->dropDownList([1 => 'slider1', 2 => 'slider2', 3 => 'gallery'], ['prompt' => 'choose type ...']) ?>
 
-    <?= $form->field($model, 'oldLink')->hiddenInput()->label(false) ?>
+        <?= $form->field($model, 'oldLink')->hiddenInput()->label(false) ?>
 
-    <div class="form-group">
-        <?= Html::submitButton(Yii::t('app', 'Save'), ['class' => 'btn btn-success']) ?>
+        <div class="form-group">
+            <?= Html::submitButton(Yii::t('app', 'Save'), ['class' => 'btn btn-success']) ?>
+        </div>
+        <?php ActiveForm::end(); ?>
+
     </div>
-    <?php ActiveForm::end(); ?>
-
-</div>

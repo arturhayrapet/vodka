@@ -15,7 +15,7 @@ $this->params['breadcrumbs'][] = Yii::t('app', 'Update');
 <div class="media-update">
 
     <h1><?= Html::encode($this->title) ?></h1>
-    <img src="../uploads/<?= $model->unique_name ?>" alt="" style="height: 100px">
+    <img src="/uploads/<?= $model->unique_name ?>" alt="" style="height: 100px">
     <?= $this->render('_form', [
         'model' => $model,
     ]) ?>

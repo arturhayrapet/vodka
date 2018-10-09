@@ -6,142 +6,94 @@
         <!-- Overlay -->
         <div class="overlay"></div>
 
-        <!-- Indicators -->
-        <!--<ol class="carousel-indicators">-->
-        <!--<li data-target="#bs-carousel" data-slide-to="0" class="active"></li>-->
-        <!--<li data-target="#bs-carousel" data-slide-to="1"></li>-->
-        <!--<li data-target="#bs-carousel" data-slide-to="2"></li>-->
-        <!--</ol>-->
+        <!--         Indicators -->
+        <!--        <ol class="carousel-indicators">-->
+        <!--        <li data-target="#bs-carousel" data-slide-to="0" class="active"></li>-->
+        <!--        <li data-target="#bs-carousel" data-slide-to="1"></li>-->
+        <!--        <li data-target="#bs-carousel" data-slide-to="2"></li>-->
+        <!--        </ol>-->
 
         <!-- Wrapper for slides -->
         <div class="carousel-inner custom_carousel-inner">
-            <div class="item slides active">
-                <div class="slide-1"></div>
-                <!--<div class="hero">-->
-                <!--<hgroup>-->
-                <!--<h1>We are creative</h1>-->
-                <!--<h3>Get start your next awesome project</h3>-->
-                <!--</hgroup>-->
-                <!--<button class="btn btn-hero btn-lg" role="button">See all features</button>-->
-                <!--</div>-->
-            </div>
-            <div class="item slides">
-                <div class="slide-2"></div>
-            </div>
-            <div class="item slides">
-                <div class="slide-3"></div>
-            </div>
+            <?php foreach ($slider1 as $key => $slid): ?>
+                <div class="item slides <?= $key == 0 ? 'active' : "" ?>">
+                    <div class="slide-1" style="background-image: url(/uploads/<?= $slid->unique_name ?>);">
+                    </div>
+                    <div class="hero">
+                        <hgroup>
+                            <h1><?= $slid->{'title_' . Yii::$app->language} ?></h1>
+                            <h3><?= $slid->{'description_' . Yii::$app->language} ?></h3>
+                        </hgroup>
+                    </div>
+
+                </div>
+            <?php endforeach; ?>
         </div>
     </div>
 </section>
 <section id="sec2">
+    <a name="products"></a>
     <img src="images/sec2bg.png" alt="" class="sec2_bg">
     <div class="container about_us_cont">
-        <div class="col-md-6 col-xs-6 about_us_left">
-            <h1>About Us</h1>
-            <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt, repellendus?</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad atque autem consectetur eius est incidunt
-                quasi saepe, sit totam voluptas. Aspernatur consequuntur delectus doloribus eius fugit in ipsam
-                laboriosam minima nam odit perspiciatis quam quas recusandae reiciendis suscipit unde, ut! Eum fuga ipsa
-                ipsum natus non odit recusandae repudiandae velit.</p>
+        <div class="col-md-12 product_title">
+            <h1><?= Yii::t('app', 'products') ?></h1>
         </div>
-        <div class="col-md-6 col-xs-6 about_us_right">
-            <hr class="hr1">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium, adipisci assumenda consectetur
-                culpa cum doloremque ea fugit in mollitia nemo nobis odio quam quasi quo recusandae similique soluta
-                vel? Aliquam consequatur, delectus ducimus, esse illo illum itaque iure nobis nostrum perspiciatis
-                placeat quasi quisquam repellat unde voluptatem? Fugiat, odio optio.</p>
-            <hr class="hr2">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet animi aspernatur assumenda culpa
-                cupiditate delectus dolores doloribus dolorum ea eius, est eum ex exercitationem facere harum id laborum
-                nam nihil non odio quae quibusdam quo reprehenderit, repudiandae temporibus, totam vitae. Ab dicta,
-                maxime officiis quod vero voluptas? Dignissimos, fugit reprehenderit?</p>
-            <hr class="hr3">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium beatae consequuntur dignissimos id
-                magni molestias necessitatibus odit pariatur praesentium, ratione sed sit velit. Animi assumenda cumque
-                ducimus error est et eum facilis fuga fugit itaque labore maiores molestias quia, quibusdam saepe soluta
-                tempora vel. Commodi consectetur dignissimos expedita illum ratione.</p>
-        </div>
+        <?php foreach ($products as $product): ?>
+            <div class="col-md-4 col-xs-12 about_us_left">
+                <a href="/site/product/<?=$product->id?>">
+                    <img src="/uploads/<?= $product->media ? $product->media->unique_name : '' ?>" alt="#">
+                    <h3><?= $product->{'title_' . Yii::$app->language} ?></h3>
+                    <hr class="hr1">
+                    <p><?= $product->{'description_' . Yii::$app->language} ?></p>
+                </a>
+            </div>
+        <?php endforeach; ?>
     </div>
 </section>
 
 <section id="sec3">
+    <a name="technology" class="scroll_technology"></a>
     <img src="images/sec3bg.svg" alt="" class="sec3_bg">
     <div class="about_text">
-        <h1>About Us</h1>
-        <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt, repellendus?</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad atque autem consectetur eius est incidunt
-            quasi saepe, sit totam voluptas. Aspernatur consequuntur delectus doloribus eius fugit in ipsam
-            laboriosam minima nam odit perspiciatis quam quas recusandae reiciendis suscipit unde, ut! Eum fuga ipsa
-            ipsum natus non odit recusandae repudiandae velit.</p>
+        <h1><?= Yii::t('app', 'technology') ?></h1>
+        <h3><?= isset($technology[0]) ? $technology[0]->{'value_' . Yii::$app->language} : '' ?></h3>
+        <p><?= isset($technology[1]) ? $technology[1]->{'value_' . Yii::$app->language} : '' ?></p>
     </div>
 </section>
 <section id="sec4">
     <img src="images/sec4bg.svg" alt="" class="sec4_bg">
-    <h1>New Aromat</h1>
+    <h1><?= Yii::t('app', 'New Aromat') ?></h1>
     <div class="container">
         <div class="row">
-            <div class="col-md-4 post_col">
-                <div class="post_img_div">
-                    <img src="images/postimg1.svg" alt="" class="post_img">
+            <?php foreach ($aromats as $aromat): ?>
+                <div class="col-md-4 post_col">
+                    <div class="post_img_div">
+                        <img src="/uploads/<?= $aromat->media ? $aromat->media->unique_name : '' ?>" alt="Aromat"
+                             class="post_img">
+                    </div>
+                    <div class="post_text_div">
+                        <h3><?= $aromat->{'title_' . Yii::$app->language} ?></h3>
+                        <hr class="post_hr_1">
+                        <p><?= $aromat->{'content_' . Yii::$app->language} ?></p>
+                    </div>
                 </div>
-                <div class="post_text_div">
-                    <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore, tenetur.</h3>
-                    <hr class="post_hr_1">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab adipisci, aliquid aut commodi
-                        debitis dignissimos dolore ea eius fugiat, hic id labore magnam molestias necessitatibus
-                        perferendis perspiciatis possimus recusandae repellat sapiente tempora tempore, temporibus ullam
-                        unde vel voluptates! Atque, totam?</p>
-                </div>
-            </div>
-            <div class="col-md-4 post_col">
-                <div class="post_img_div">
-                    <img src="images/postimg2.svg" alt="" class="post_img">
-                </div>
-                <div class="post_text_div">
-                    <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore, tenetur.</h3>
-                    <hr class="post_hr_2">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab adipisci, aliquid aut commodi
-                        debitis dignissimos dolore ea eius fugiat, hic id labore magnam molestias necessitatibus
-                        perferendis perspiciatis possimus recusandae repellat sapiente tempora tempore, temporibus ullam
-                        unde vel voluptates! Atque, totam?</p>
-                </div>
-            </div>
-            <div class="col-md-4 post_col">
-                <div class="post_img_div">
-                    <img src="images/postimg3.svg" alt="" class="post_img">
-                </div>
-                <div class="post_text_div">
-                    <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore, tenetur.</h3>
-                    <hr class="post_hr_3">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab adipisci, aliquid aut commodi
-                        debitis dignissimos dolore ea eius fugiat, hic id labore magnam molestias necessitatibus
-                        perferendis perspiciatis possimus recusandae repellat sapiente tempora tempore, temporibus ullam
-                        unde vel voluptates! Atque, totam?</p>
-                </div>
-            </div>
+            <?php endforeach; ?>
         </div>
     </div>
 </section>
 <section id="sec5">
     <img src="images/sec5bg.svg" alt="" class="sec5_bg">
-    <h1>2018</h1>
-    <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa, molestiae?</h3>
     <div class="container">
         <div id="myCarousel" class="carousel slide" data-ride="carousel">
             <!-- Wrapper for slides -->
             <div class="carousel-inner">
-                <div class="item active">
-                    <img src="images/slider_shish.png" alt="mijnaberd">
-                </div>
-
-                <div class="item">
-                    <img src="images/slider_shish.png" alt="mijnaberd">
-                </div>
-
-                <div class="item">
-                    <img src="images/slider_shish.png" alt="mijnaberd">
-                </div>
+                <?php foreach ($slider2 as $key => $slid): ?>
+                    <div class="item <?= $key == 0 ? 'active' : "" ?>">
+                        <h1><?= $slid->{'title_' . Yii::$app->language} ?></h1>
+                        <h3><?= $slid->{'description_' . Yii::$app->language} ?></h3>
+                        <img src="uploads/<?= $slid->unique_name ?>" alt="mijnaberd">
+                    </div>
+                <?php endforeach; ?>
             </div>
             <!-- Left and right controls -->
             <a class="left carousel-control custom_carousel_control" href="#myCarousel" data-slide="prev">
@@ -154,11 +106,7 @@
             </a>
         </div>
     </div>
-    <p class="carousel_footer_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam consectetur eaque
-        eligendi, eos et harum
-        mollitia obcaecati optio praesentium quas quibusdam recusandae. Alias cupiditate esse explicabo ipsum nulla?
-        Autem dolore molestiae neque optio provident qui rerum sapiente, sint veniam voluptatem. Delectus dolores esse
-        inventore magni obcaecati quos similique suscipit voluptatibus.</p>
+    <p class="carousel_footer_text"><?= isset($slider2_text) ? $slider2_text->{'value_' . Yii::$app->language} : '' ?></p>
 </section>
 <div>
     <img src="images/5-7.png" alt="" width="100%">
@@ -167,52 +115,16 @@
 
 
 <section id="gallery" class="sec_gallery">
-    <h1>GALLERY</h1>
+    <h1><?= Yii::t('app', 'gallery') ?></h1>
     <div id="gallery_slider_wrp" class="container">
         <div class="galery">
             <div class="slide">
                 <ul class="slide_ul">
-                    <li class="slide_li">
-                        <img src="/images/gallery/01.png" alt=""></li>
-                    <li class="slide_li">
-                        <img src="/images/gallery/02.png" alt=""></li>
-                    <li class="slide_li">
-                        <img src="/images/gallery/03.png" alt=""></li>
-                    <li class="slide_li">
-                        <img src="/images/gallery/04.png" alt=""></li>
-                    <li class="slide_li">
-                        <img src="/images/gallery/05.png" alt=""></li>
-                    <li class="slide_li">
-                        <img src="/images/gallery/06.png" alt=""></li>
-                    <li class="slide_li">
-                        <img src="/images/gallery/07.png" alt=""></li>
-                    <li class="slide_li">
-                        <img src="/images/gallery/08.png" alt=""></li>
-                    <li class="slide_li">
-                        <img src="/images/gallery/09.png" alt=""></li>
-                    <li class="slide_li">
-                        <img src="/images/gallery/10.png" alt=""></li>
-                    <li class="slide_li">
-                        <img src="/images/gallery/11.png" alt="">
-                    </li>
-                    <li class="slide_li">
-                        <img src="/images/gallery/12.png" alt=""></li>
-                    <li class="slide_li">
-                        <img src="/images/gallery/02.png" alt=""></li>
-                    <li class="slide_li">
-                        <img src="/images/gallery/03.png" alt="">
-                    </li>
-                    <li class="slide_li">
-                        <img src="/images/gallery/11.png" alt="">
-                    </li>
-                    <li class="slide_li">
-                        <img src="/images/gallery/12.png" alt=""></li>
-                    <li class="slide_li">
-                        <img src="/images/gallery/02.png" alt="">
-                    </li>
-                    <li class="slide_li">
-                        <img src="/images/gallery/03.png" alt="">
-                    </li>
+                    <?php foreach ($gallery as $item): ?>
+                        <li class="slide_li">
+                            <img src="/uploads/<?= $item->unique_name ?>" alt=""></li>
+                    <?php endforeach; ?>
+
                 </ul>
             </div>
         </div>
@@ -226,100 +138,43 @@
 
 <section class="sec_news">
     <img src="images/newsBG.svg" alt="" class="news_bg">
-    <h1>NEWS</h1>
+    <h1><?= Yii::t('app', 'news') ?></h1>
     <div class="container">
-        <div class="col-md-6 col-xs-12 post_box_col">
-            <div class=" col-md-12 post_box">
-                <div class="col-md-3 post_number">
-                    <img src='/images/post.svg' alt="">
-                    <span>01</span>
+        <?php foreach ($posts as $key => $post): ?>
+            <a href="/site/post/<?= $post->id ?>">
+                <div class="col-md-6 col-xs-12 post_box_col">
+                    <div class=" col-md-12 post_box">
+                        <div class="col-md-3 post_number">
+                            <img src='/images/post.svg' alt="">
+                            <span><?= $key + 1 ?></span>
+                        </div>
+                        <div class="col-md-9 text_style">
+                            <b><?= $post->{'title_' . Yii::$app->language} ?></b>
+                            <p><?= $post->{'content_' . Yii::$app->language} ?></p>
+                            <hr style="border-top: 1px solid #042c52;">
+                        </div>
+                    </div>
                 </div>
-                <div class="col-md-9 text_style">
-                    <b>Lorem ipsum.</b>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci laboriosam modi quidem.
-                        Blanditiis culpa dignissimos eveniet excepturi molestias nesciunt nobis perspiciatis repellendus
-                        totam. A architecto cumque eaque ipsa nobis quaerat quasi voluptatum! A adipisci architecto
-                        distinctio dolor doloremque dolorum harum illum, iste, minus neque obcaecati perspiciatis quasi
-                        quod reiciendis voluptatibus.</p>
-                    <hr style="border-top: 1px solid #042c52;">
-
-                </div>
-            </div>
-        </div>
-        <div class="col-md-6 col-xs-12 post_box_col">
-            <div class="col-md-12 post_box">
-                <div class="col-md-3 post_number">
-                    <img src='/images/post.svg' alt="">
-                    <span>01</span>
-                </div>
-                <div class="col-md-9 text_style">
-                    <b>Lorem ipsum.</b>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci laboriosam modi quidem.
-                        Blanditiis culpa dignissimos eveniet excepturi molestias nesciunt nobis perspiciatis repellendus
-                        totam. A architecto cumque eaque ipsa nobis quaerat quasi voluptatum! A adipisci architecto
-                        distinctio dolor doloremque dolorum harum illum, iste, minus neque obcaecati perspiciatis quasi
-                        quod reiciendis voluptatibus.</p>
-                    <hr style="border-top: 1px solid #042c52;">
-
-                </div>
-            </div>
-        </div>
-        <div class="col-md-6 col-xs-12 post_box_col">
-            <div class="col-md-12 post_box">
-                <div class="col-md-3 post_number">
-                    <img src='/images/post.svg' alt="">
-                    <span>01</span>
-                </div>
-                <div class="col-md-9 text_style">
-                    <b>Lorem ipsum.</b>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci laboriosam modi quidem.
-                        Blanditiis culpa dignissimos eveniet excepturi molestias nesciunt nobis perspiciatis repellendus
-                        totam. A architecto cumque eaque ipsa nobis quaerat quasi voluptatum! A adipisci architecto
-                        distinctio dolor doloremque dolorum harum illum, iste, minus neque obcaecati perspiciatis quasi
-                        quod reiciendis voluptatibus.</p>
-                    <hr style="border-top: 1px solid #042c52;">
-
-                </div>
-            </div>
-        </div>
-        <div class="col-md-6 col-xs-12 post_box_col">
-            <div class="col-md-12 post_box">
-                <div class="col-md-3 post_number">
-                    <img src='/images/post.svg' alt="">
-                    <span>01</span>
-                </div>
-                <div class="col-md-9 text_style">
-                    <b>Lorem ipsum.</b>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci laboriosam modi quidem.
-                        Blanditiis culpa dignissimos eveniet excepturi molestias nesciunt nobis perspiciatis repellendus
-                        totam. A architecto cumque eaque ipsa nobis quaerat quasi voluptatum! A adipisci architecto
-                        distinctio dolor doloremque dolorum harum illum, iste, minus neque obcaecati perspiciatis quasi
-                        quod reiciendis voluptatibus.</p>
-                    <hr style="border-top: 1px solid #042c52;">
-
-                </div>
-            </div>
-        </div>
+            </a>
+        <?php endforeach; ?>
     </div>
 </section>
 <section class="sec_sub">
     <img src="images/sec_sub.png" alt="" class="sub_bg">
     <div class="subscribe">
-        <h1>STAY IN TOUCH</h1>
+        <h1><?= Yii::t('app', 'STAY IN TOUCH') ?></h1>
         <div class="sub_left">
-            <img src="images/shish_sub.svg" alt="">
+            <?php if (isset($subscribe[0])): ?>
+                <img src="<?= $subscribe[0]->{'value_' . Yii::$app->language} ?>"
+                     alt="subscribe">
+            <?php endif; ?>
         </div>
         <div class="sub_right">
             <div class="sub_right_style">
-                <p><b>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At, dicta.</b></p>
-                <p class="sub_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam asperiores,
-                    commodi dolor earum
-                    eius,
-                    error, ipsum magni minima minus quas quidem sunt suscipit veritatis vero voluptatem. Ad culpa
-                    distinctio
-                    dolorum excepturi harum ipsam ipsum neque nobis numquam qui quia, sunt?</p>
+                <p><b><?= isset($subscribe[1]) ? $subscribe[1]->{'value_' . Yii::$app->language} : '' ?></b></p>
+                <p class="sub_text"><?= isset($subscribe[2]) ? $subscribe[2]->{'value_' . Yii::$app->language} : '' ?></p>
                 <input type="text" class="sub_input">
-                <button class="sub_btn">send</button>
+                <button class="sub_btn"><?= Yii::t('app', 'send') ?></button>
             </div>
         </div>
     </div>

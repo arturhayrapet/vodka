@@ -1,3 +1,7 @@
+<?php
+$menus = \frontend\components\Helper::getMenus();
+?>
+
 <header class="">
     <div class="container example5">
         <nav class="navbar navbar-default custom_navbar">
@@ -9,16 +13,14 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="http://disputebills.com"><img style="	width: 100px;"
-                                                                                src="../images/logo.svg"
-                                                                                alt="logo">
+                    <a class="navbar-brand" href="/"><img style="	width: 100px;" src="../images/logo.svg" alt="logo">
                     </a>
                 </div>
                 <div id="navbar5" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav navbar-right">
-                        <li class="active"><a href="#">Home</a></li>
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Contact</a></li>
+                        <?php foreach ($menus as $menu): ?>
+                            <li><a href="<?= $menu->url ?>"><?= $menu->{'name_' . Yii::$app->language} ?></a></li>
+                        <?php endforeach; ?>
                     </ul>
                 </div>
                 <!--/.nav-collapse -->

@@ -55,7 +55,7 @@ $this->registerJsFile(
 
     <?= $form->field($model, 'degree')->textInput() ?>
 
-    <?= $form->field($model, 'type')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'type')->dropDownList(['0'=>'product','1'=>'aromat'],[ 'prompt' => 'please choose']) ?>
 
     <?= $form->field($model, 'image')->hiddenInput()->label(false) ?>
 
