@@ -9,8 +9,8 @@
         </div>
         <div class="row" style="margin-top: 100px; margin-bottom: 100px">
             <?php foreach ($posts as $post): ?>
-                <div class="col-md-4 col-xs-12">
-                    <a href="/site/post/<?= $post->id?>">
+                <div class="col-md-4 col-xs-12 post_box_mobile">
+                    <a href="/site/post/<?= $post->id ?>">
                         <div style="box-shadow: 0px 0px 5px 1px silver;">
                             <div style="text-align: center"><img src="/uploads/<?= $post->media->unique_name ?>" alt=""
                                                                  width="100%" height="50%">

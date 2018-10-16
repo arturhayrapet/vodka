@@ -27,15 +27,27 @@ use yii\widgets\ActiveForm;
         <div class="tab-content">
             <div class="tab-pane fade active in" id="am">
                 <?= $form->field($model, 'title_am')->textInput(['maxlength' => true]) ?>
-                <?= $form->field($model, 'description_am')->widget(\yii\redactor\widgets\Redactor::className()) ?>
+                <?= $form->field($model, 'description_am')->widget(\yii\redactor\widgets\Redactor::className(),[
+                    'clientOptions' => [
+                        'paragraphize' => false,
+                    ]
+                ]) ?>
             </div>
             <div class="tab-pane fade" id="ru">
                 <?= $form->field($model, 'title_ru')->textInput(['maxlength' => true]) ?>
-                <?= $form->field($model, 'description_ru')->widget(\yii\redactor\widgets\Redactor::className()) ?>
+                <?= $form->field($model, 'description_ru')->widget(\yii\redactor\widgets\Redactor::className(),[
+                    'clientOptions' => [
+                        'paragraphize' => false,
+                    ]
+                ]) ?>
             </div>
             <div class="tab-pane fade" id="en">
                 <?= $form->field($model, 'title_en')->textInput(['maxlength' => true]) ?>
-                <?= $form->field($model, 'description_en')->widget(\yii\redactor\widgets\Redactor::className()) ?>
+                <?= $form->field($model, 'description_en')->widget(\yii\redactor\widgets\Redactor::className(),[
+                    'clientOptions' => [
+                        'paragraphize' => false,
+                    ]
+                ]) ?>
             </div>
         </div>
 

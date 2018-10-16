@@ -9,7 +9,7 @@
         </div>
         <div class="row" style="margin-top: 100px; margin-bottom: 100px">
             <?php foreach ($products as $post): ?>
-                <div class="col-md-4 col-xs-12">
+                <div class="col-md-4 col-xs-12 post_box_mobile">
                     <a href="/site/product/<?= $post->id?>">
                         <div style="box-shadow: 0px 0px 5px 1px silver;">
                             <div style="text-align: center"><img src="/uploads/<?= $post->media->unique_name ?>" alt=""

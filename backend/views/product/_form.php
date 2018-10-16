@@ -33,17 +33,29 @@ $this->registerJsFile(
         <div class="tab-pane fade active in" id="am">
             <?= $form->field($model, 'title_am')->textInput(['maxlength' => true]) ?>
             <?= $form->field($model, 'description_am')->textInput(['maxlength' => true]) ?>
-            <?= $form->field($model, 'content_am')->widget(Redactor::className()) ?>
+            <?= $form->field($model, 'content_am')->widget(Redactor::className(),[
+                'clientOptions' => [
+                    'paragraphize' => false,
+                ]
+            ]) ?>
         </div>
         <div class="tab-pane fade" id="ru">
             <?= $form->field($model, 'title_ru')->textInput(['maxlength' => true]) ?>
             <?= $form->field($model, 'description_ru')->textInput(['maxlength' => true]) ?>
-            <?= $form->field($model, 'content_ru')->widget(Redactor::className()) ?>
+            <?= $form->field($model, 'content_ru')->widget(Redactor::className(),[
+                'clientOptions' => [
+                    'paragraphize' => false,
+                ]
+            ]) ?>
         </div>
         <div class="tab-pane fade" id="en">
             <?= $form->field($model, 'title_en')->textInput(['maxlength' => true]) ?>
             <?= $form->field($model, 'description_en')->textInput(['maxlength' => true]) ?>
-            <?= $form->field($model, 'content_en')->widget(Redactor::className()) ?>
+            <?= $form->field($model, 'content_en')->widget(Redactor::className(),[
+                'clientOptions' => [
+                    'paragraphize' => false,
+                ]
+            ]) ?>
         </div>
     </div>
 

@@ -764,4 +764,16 @@ a:hover {
     .footer1 {
         line-height: 3;
     }
+
+    .img_div img {
+        width: 100% !important;
+    }
+
+    .post_text {
+        padding: 50px;
+    }
+
+    .post_box_mobile {
+        margin-bottom: 20px;
+    }
 }
