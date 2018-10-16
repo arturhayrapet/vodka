@@ -17,13 +17,18 @@ $menus = \frontend\components\Helper::getMenus();
                     </a>
                 </div>
                 <div id="navbar5" class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav navbar-right">
+                    <ul class="nav navbar-nav navbar-right" style="    margin-right: 100px;">
                         <?php foreach ($menus as $menu): ?>
                             <li><a href="<?= $menu->url ?>"><?= $menu->{'name_' . Yii::$app->language} ?></a></li>
                         <?php endforeach; ?>
                     </ul>
                 </div>
                 <!--/.nav-collapse -->
+                <div class="languages">
+                    <a href="/am">am</a> /
+                    <a href="/ru">ru</a> /
+                    <a href="/en">en</a>
+                </div>
             </div>
             <!--/.container-fluid -->
         </nav>

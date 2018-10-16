@@ -144,11 +144,11 @@
             <a href="/site/post/<?= $post->id ?>">
                 <div class="col-md-6 col-xs-12 post_box_col">
                     <div class=" col-md-12 post_box">
-                        <div class="col-md-3 post_number">
+                        <div class="col-md-3 col-xs-3 post_number">
                             <img src='/images/post.svg' alt="">
                             <span><?= $key + 1 ?></span>
                         </div>
-                        <div class="col-md-9 text_style">
+                        <div class="col-md-9 col-xs-9 text_style">
                             <b><?= $post->{'title_' . Yii::$app->language} ?></b>
                             <p><?= $post->{'content_' . Yii::$app->language} ?></p>
                             <hr style="border-top: 1px solid #042c52;">

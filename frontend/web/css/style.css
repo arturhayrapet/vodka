@@ -471,6 +471,7 @@ header {
     border: 1px solid;
     float: left;
     width: 70%;
+    padding-left: 10px;
 }
 
 .sub_btn {
@@ -657,4 +658,110 @@ header {
 
 a:hover {
     text-decoration: none !important;
+}
+
+.languages {
+    display: inline-block;
+    float: right;
+    margin-top: -33px;
+    color: #777;
+}
+
+.languages a {
+    color: #777;
+}
+
+@media screen and (max-width: 780px) {
+    .languages {
+        text-align: center;
+        float: none;
+        position: absolute;
+        margin: -33px auto 0 auto;
+        left: 0;
+        right: 0;
+        z-index: -2;
+    }
+
+    #sec1 {
+        height: auto;
+    }
+
+    .hero {
+        right: 0;
+        top: 20%;
+    }
+
+    #sec3 {
+        height: 100%;
+    }
+
+    .sec3_bg {
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .about_text {
+        width: 55%;
+        position: absolute;
+        color: white;
+        top: 45%;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+    }
+
+    .sec4_bg {
+        top: -100px;
+        height: 100%;
+        object-fit: cover;
+        width: 100%;
+    }
+
+    #sec4 {
+        height: 100%;
+    }
+
+    .news_bg {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .post_box_col {
+        border: 1px solid;
+        padding: 0;
+    }
+
+    .post_box {
+        border: none;
+    }
+
+    .sec_sub {
+        height: 100%;
+    }
+
+    .sub_bg {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .sub_right_style {
+        width: 80%;
+        height: auto;
+        margin-top: 0;
+        border-left: 2px solid silver;
+        padding-left: 10px;
+        padding-top: 0;
+    }
+
+    .sub_left img {
+        width: 100%;
+        padding-top: 50%;
+    }
+
+    .footer1 {
+        line-height: 3;
+    }
 }
