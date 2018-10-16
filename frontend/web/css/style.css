@@ -796,3 +796,30 @@ a:hover {
         object-fit: cover;
     }
 }
+
+.site-about {
+    min-height: 300px;
+    padding-top: 100px;
+}
+
+.about_desc {
+    text-align: center;
+    font-size: 12px;
+    margin: 0 auto 50px auto;
+    width: 60%;
+}
+
+.abour_hr1, .abour_hr2, .abour_hr3 {
+    width: 10%;
+    margin-left: 0;
+}
+
+.abour_hr1 {
+    border-top: 3px solid green;
+}
+.abour_hr2 {
+    border-top: 3px solid darkviolet;
+}
+.abour_hr3 {
+    border-top: 3px solid orangered;
+}
