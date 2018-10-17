@@ -6,6 +6,7 @@
 return [
     'Finance and Business' =>'Ֆինանսներ և Բիզնես',
     'Update' => 'Թարմացնել',
+    'products' => 'արտադրանք',
     'Meta' => 'Մետա',
     'Finance' => 'Ֆինանսներ',
     'Subscribe to us for the latest updates and news' => 'Բաժանորդագրվեք նորությունները ստանալու համար',

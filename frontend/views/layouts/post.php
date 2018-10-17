@@ -33,7 +33,7 @@ $menus = \frontend\components\Helper::getMenus();
         <nav class="navbar navbar-default custom_navbar">
             <div class="container-fluid">
                 <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar5">
+                    <button type="button" class="navbar-toggle collapsed custom_navbar-toggle" data-toggle="collapse" data-target="#navbar5">
                         <span class="sr-only">Toggle navigation</span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>

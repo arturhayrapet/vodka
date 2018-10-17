@@ -25,6 +25,7 @@ header {
     width: 100% !important;
     z-index: 10;
     height: 80px;
+    top: 0;
 }
 
 /*slider*/
@@ -665,6 +666,7 @@ a:hover {
     float: right;
     margin-top: -33px;
     color: #777;
+    z-index: 0;
 }
 
 .languages a {
@@ -679,7 +681,6 @@ a:hover {
         margin: -33px auto 0 auto;
         left: 0;
         right: 0;
-        z-index: -2;
     }
 
     #sec1 {
@@ -780,6 +781,14 @@ a:hover {
     .sec2_bg {
         object-fit: cover;
     }
+
+    .custom_navbar-toggle {
+        z-index: 1;
+    }
+
+    .nav > li {
+         z-index: 1;
+    }
 }
 
 @media screen and (min-width: 781px) and (max-width: 1920px) {
@@ -817,9 +826,78 @@ a:hover {
 .abour_hr1 {
     border-top: 3px solid green;
 }
+
 .abour_hr2 {
     border-top: 3px solid darkviolet;
 }
+
 .abour_hr3 {
     border-top: 3px solid orangered;
+}
+
+.site-contact {
+    margin-top: 100px;
+    min-height: 500px;
+}
+
+#map_contact {
+    width: 100%;
+    height: 100vh;
+}
+
+#contactform-subject, #contactform-email, #contactform-name, #contactform-verifycode {
+    border-radius: 30px;
+    height: 50px;
+}
+
+#contactform-body {
+    border-radius: 15px;
+}
+
+.contact_form_btn {
+    width: 100px;
+    border-radius: 20px;
+    background-color: #0d173a;
+    outline: none;
+}
+
+.contact_form_btn:focus {
+    outline: none;
+}
+
+.information {
+    padding: 50px 25px 50px 25px;
+    background-color: #263467;
+    width: 100%;
+    height: 100%;
+    color: white;
+    text-align: center;
+}
+
+.inform_title {
+    font-size: 30px;
+}
+
+.contact_icons {
+    width: 30px !important;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    background: white;
+    color: #263467;
+    border-radius: 50%;
+    padding: 2%;
+    margin-right: 20px;
+    float: left;
+}
+
+.contact_info p {
+    margin-bottom: 20px;
+    height: 30px;
+}
+
+.contact_info {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    text-align: start;
 }
