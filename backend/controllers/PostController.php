@@ -71,6 +71,9 @@ class PostController extends Controller
         $media = Media::find()->all();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            if($model->subscribers){
+                $model->sendEmail();
+            }
             return $this->redirect(['view', 'id' => $model->id]);
         }
 

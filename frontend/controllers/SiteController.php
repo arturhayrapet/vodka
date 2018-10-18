@@ -92,10 +92,10 @@ class SiteController extends Controller
         $subscribe = Settings::find()->where(['kay' => ['subscribe_photo', 'subscribe_title', 'subscribe_text']])->all();
         $model = new Subscribers();
         if($model->load(Yii::$app->request->post()) && $model->save()){
-            Yii::$app->session->setFlash('massage', Yii::t('app','Thanks for subscription please check your email'));
+            Yii::$app->session->setFlash('message', Yii::t('app','Thanks for subscription please check your email'));
             $model->sendEmail();
         }elseif($model->getErrors()){
-            Yii::$app->session->setFlash('massage', Yii::t('app',$model->getErrors('email')[0]));
+            Yii::$app->session->setFlash('message', Yii::t('app',$model->getErrors('email')[0]));
         }
 
 
@@ -114,7 +114,9 @@ class SiteController extends Controller
         ]);
     }
     public function actionAcceptSubscribe(){
-        if($email = Yii::$app->request->get('email') && $token = Yii::$app->request->get('token')){
+        if( Yii::$app->request->get('email') && Yii::$app->request->get('token')){
+            $token = Yii::$app->request->get('token');
+            $email = Yii::$app->request->get('email');
             $subscriber = Subscribers::find()->where(['email' => $email])->andWhere(['token' => $token])->one();
             if($subscriber){
                 $subscriber->active = true;

@@ -66,6 +66,9 @@ $this->registerJsFile(
         <?= $form->field($model, 'type')->textInput(['maxlength' => true]) ?>
 
 
+        <?= $form->field($model, 'subscribers')->checkbox() ?>
+
+
         <!------------------------------------- Modal -------------------------------------------------------->
         <?= $this->render('_modal', [
             'media' => $media,

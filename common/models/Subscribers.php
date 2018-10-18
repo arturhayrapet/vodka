@@ -49,6 +49,13 @@ class Subscribers extends \yii\db\ActiveRecord
             'token' => Yii::t('app', 'Token'),
         ];
     }
+    public function beforeSave($insert)
+    {
+        $this->token = Yii::$app->security->generateRandomString();
+
+        return parent::beforeSave($insert);
+    }
+
     /**
      * Sends an email to the specified email address using the information collected by this model.
      *
@@ -61,7 +68,7 @@ class Subscribers extends \yii\db\ActiveRecord
             ->setTo($this->email)
             ->setFrom([Yii::$app->params['adminEmail'] => 'Միջնաբերդ'])
             ->setSubject('Միջնաբերդ')
-            ->setHtmlBody('Շնորհակալություն բաժանորդագրվելու համար, անցեք ')
+            ->setHtmlBody('Շնորհակալություն բաժանորդագրվելու համար, անցեք <a href="http://mijnaberd.loc/accept?email='.$this->email.'&token='.$this->token.'".> հղումով </a>')
             ->send();
     }
 }

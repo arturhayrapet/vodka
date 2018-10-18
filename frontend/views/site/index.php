@@ -1,13 +1,21 @@
-<?php if (Yii::$app->session->hasFlash('message')): ?>
-    <div class="alert alert-success alert-dismissable">
-        <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
-        <?= Yii::$app->session->getFlash('message') ?>
-    </div>
-<?php endif; ?>
 <section id="sec1">
     <img src="/images/sec1.png" alt="" class="sec1_bg">
     <img src="/images/sec1-2.png" alt="" class="sec1_bg">
     <img src="/images/sec1-3.png" alt="" class="sec1_bg">
+    <?php if (Yii::$app->session->hasFlash('message')): ?>
+        <div class="alert alert-success alert-dismissable" style="z-index: 999999999999;
+    color: #3c763d;
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+    display: table-caption;
+    float: right;
+    position: absolute;
+    right: 25px;">
+            <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+            <?= Yii::$app->session->getFlash('message');
+            $model->clearErrors('email')?>
+        </div>
+    <?php endif; ?>
     <div class="carousel fade-carousel slide" data-ride="carousel" data-interval="4000" id="bs-carousel">
         <!-- Overlay -->
         <div class="overlay"></div>
