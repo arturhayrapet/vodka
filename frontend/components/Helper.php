@@ -23,7 +23,6 @@ use SoapFault;
 class Helper extends Component
 {
     public $menu;
-    public static $social = ['Address', 'text', 'facebook', 'Phone', 'Email', 'vimeo', 'linkedin', 'instagram', 'pinterest', 'google', 'twitter', 'youtube-play', 'youtube'];
 
     public function getMenuChild($menu, $sub = 1)
     {
@@ -36,78 +35,8 @@ class Helper extends Component
                 $this->menu .= '<a href="' . '/' . Yii::$app->language . '/' . $item['url'][0] . '">' . $item['label'] . '</a>';
             }
         }
-        //  if ($sub > 1) {
-        //$this->menu .= '</li>';
-        // }
         $this->menu .= '</div>';
         return $this->menu;
-    }
-
-
-    public static function getFooterMenus()
-    {
-        $footer = \common\models\Settings::find()->select('key,value')->where(['in', 'key', self::$social])->asArray()->all();
-        /*$footerEmail = '';
-        $footerAddress = '';*/
-        $footerPhone = '';
-        $social = [];
-        foreach ($footer as $key => $foot) {
-            switch ($foot['key']) {
-                case 'phone':
-                    $footerPhone = $foot['value'];
-                    break;
-                case 'text' :
-                    $text = $foot['value'];
-                    break;
-                case 'Email':
-                    $footerEmail = $foot['value'];
-                    break;
-                case 'Address':
-                    $footerAddress = $foot;
-                    break;
-                default:
-                    $social[$foot['key']] = $foot['value'];
-            }
-        }
-
-        /*$menusObj = new Menus();
-        $menus = $menusObj->getMenus('footer_1');
-        $footerMenus = $menusObj->getMenus('footer_3');
-        $footerMenuItems = '';
-        $menuItems = '<ul>';
-        foreach ($menus as $menu):
-            $items = empty($menu['items']);
-            $href = !$items ? 'javascript:void(0);' : $menu['url'][0];
-            $class = !$items ? 'submenu' : '';
-            $menuItems .= '<li class="' . $class . '">
-            <a href="' . '/' .Yii::$app->language.$href . '"
-               class="show-submenu">' . $menu['label'] . '
-            </a>';
-            if (!$items) {
-                $menuItems .= Yii::$app->helper->getMenuChild($menu['items']);
-            }
-            $menuItems = $menuItems . '</li>';
-
-        endforeach;
-        $menuItems .= '</ul>';
-
-        foreach ($footerMenus as $footerMenu):
-
-            $items = empty($footerMenu['items']);
-            $href = !$items ? 'javascript:void(0);' : $footerMenu['url'][0];
-            $class = !$items ? 'submenu' : '';
-            $footerMenuItems .= '<li class="' . $class . '">
-            <a href="' . $href . '"
-               class="show-submenu">' . $footerMenu['label'] . '
-            </a>';
-            if (!$items) {
-                $footerMenuItems .= Yii::$app->helper->getMenuChild($footerMenu['items']);
-            }
-            $footerMenuItems = $footerMenuItems . '</li>';
-        endforeach;*/
-
-        // return ['footerEmail' => $footerEmail, 'address' => $footerAddress, 'social' => $social, 'footerPhone' => $footerPhone, 'menuItems' => $menuItems, 'footerMenuItems' => $footerMenuItems];
-        return ['phone' => $footerPhone, 'text' => $text, 'email' => $footerEmail, 'social' => $social];
     }
 
     public static function getLanguage()
