@@ -13,7 +13,7 @@
             </div>
             <div class="modal-body">
                 <?php foreach ($media as $media){
-                    echo "<img data-id = \"$media->id\" class=\"img\" src=". Yii::$app->homeUrl.'uploads/'.$media->unique_name ." style=\"height: 100px;cursor: pointer\" >";
+                    echo "<img data-id = \"$media->id\" class=\"img\" src=".'/uploads/'.$media->unique_name ." style=\"height: 100px;cursor: pointer\" >";
                 }?>
             </div>
             <div class="modal-footer">
