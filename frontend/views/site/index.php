@@ -5,9 +5,9 @@
     </div>
 <?php endif; ?>
 <section id="sec1">
-    <img src="images/sec1.png" alt="" class="sec1_bg">
-    <img src="images/sec1-2.png" alt="" class="sec1_bg">
-    <img src="images/sec1-3.png" alt="" class="sec1_bg">
+    <img src="/images/sec1.png" alt="" class="sec1_bg">
+    <img src="/images/sec1-2.png" alt="" class="sec1_bg">
+    <img src="/images/sec1-3.png" alt="" class="sec1_bg">
     <div class="carousel fade-carousel slide" data-ride="carousel" data-interval="4000" id="bs-carousel">
         <!-- Overlay -->
         <div class="overlay"></div>
@@ -39,7 +39,7 @@
 </section>
 <section id="sec2">
     <a name="products"></a>
-    <img src="images/sec2bg.png" alt="" class="sec2_bg">
+    <img src="/images/sec2bg.png" alt="" class="sec2_bg">
     <div class="container about_us_cont">
         <div class="col-md-12 product_title">
             <h1><?= Yii::t('app', 'products') ?></h1>
@@ -59,7 +59,7 @@
 
 <section id="sec3">
     <a name="technology" class="scroll_technology"></a>
-    <img src="images/sec3bg.svg" alt="" class="sec3_bg">
+    <img src="/images/sec3bg.svg" alt="" class="sec3_bg">
     <div class="about_text">
         <h1><?= Yii::t('app', 'technology') ?></h1>
         <h3><?= isset($technology[0]) ? $technology[0]->{'value_' . Yii::$app->language} : '' ?></h3>
@@ -67,7 +67,7 @@
     </div>
 </section>
 <section id="sec4">
-    <img src="images/sec4bg.svg" alt="" class="sec4_bg">
+    <img src="/images/sec4bg.svg" alt="" class="sec4_bg">
     <h1><?= Yii::t('app', 'New Aromat') ?></h1>
     <div class="container">
         <div class="row">
@@ -88,7 +88,7 @@
     </div>
 </section>
 <section id="sec5">
-    <img src="images/sec5bg.svg" alt="" class="sec5_bg">
+    <img src="/images/sec5bg.svg" alt="" class="sec5_bg">
     <div class="container">
         <div id="myCarousel" class="carousel slide" data-ride="carousel">
             <!-- Wrapper for slides -->
@@ -97,7 +97,7 @@
                     <div class="item <?= $key == 0 ? 'active' : "" ?>">
                         <h1><?= $slid->{'title_' . Yii::$app->language} ?></h1>
                         <h3><?= $slid->{'description_' . Yii::$app->language} ?></h3>
-                        <img src="uploads/<?= $slid->unique_name ?>" alt="mijnaberd">
+                        <img src="/uploads/<?= $slid->unique_name ?>" alt="mijnaberd">
                     </div>
                 <?php endforeach; ?>
             </div>
@@ -115,7 +115,7 @@
     <p class="carousel_footer_text"><?= isset($slider2_text) ? $slider2_text->{'value_' . Yii::$app->language} : '' ?></p>
 </section>
 <div>
-    <img src="images/5-7.png" alt="" width="100%">
+    <img src="/images/5-7.png" alt="" width="100%">
 </div>
 <!--    GALLERY  ------------------------------------------------------>
 
@@ -143,7 +143,7 @@
 
 
 <section class="sec_news">
-    <img src="images/newsBG.svg" alt="" class="news_bg">
+    <img src="/images/newsBG.svg" alt="" class="news_bg">
     <h1><?= Yii::t('app', 'news') ?></h1>
     <div class="container">
         <?php foreach ($posts as $key => $post): ?>
@@ -166,7 +166,7 @@
     </div>
 </section>
 <section class="sec_sub">
-    <img src="images/sec_sub.png" alt="" class="sub_bg">
+    <img src="/images/sec_sub.png" alt="" class="sub_bg">
     <div class="subscribe">
         <h1><?= Yii::t('app', 'STAY IN TOUCH') ?></h1>
         <div class="sub_left">
