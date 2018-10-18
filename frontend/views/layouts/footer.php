@@ -12,16 +12,16 @@ $social = \frontend\components\Helper::getSocial();
             <div class="col-md-3"><?= $footer[1]->{'value_' . Yii::$app->language} ?>
                 <br> <?= $footer[2]->{'value_' . Yii::$app->language} ?></div>
             <div class="col-md-3 social_links">
-                <?php if ($social[0]): ?>
+                <?php if (isset($social[0])): ?>
                     <a href="<?= $social[0]->{'value_' . Yii::$app->language} ?>"><i class="fab fa-facebook-f"></i></a>
                 <?php endIf ?>
-                <?php if ($social[1]): ?>
+                <?php if (isset($social[1])): ?>
                 <a href="<?= $social[1]->{'value_' . Yii::$app->language} ?>"><i class="fab fa-twitter"></i></a>
                 <?php endIf ?>
-                <?php if ($social[2]): ?>
+                <?php if (isset($social[2])): ?>
                 <a href="<?= $social[2]->{'value_' . Yii::$app->language} ?>"><i class="fab fa-instagram"></i></a>
                 <?php endIf ?>
-                <?php if ($social[3]): ?>
+                <?php if (isset($social[3])): ?>
                 <a href="<?= $social[3]->{'value_' . Yii::$app->language} ?>"><i class="fab fa-linkedin"></i></a>
                 <?php endIf ?>
             </div>
