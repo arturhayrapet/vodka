@@ -67,7 +67,7 @@
 
 <section id="sec3">
     <a name="technology" class="scroll_technology"></a>
-    <img src="/images/sec3bg.svg" alt="" class="sec3_bg">
+    <img src="/images/sec3bg.jpg" alt="" class="sec3_bg">
     <div class="about_text">
         <h1><?= Yii::t('app', 'technology') ?></h1>
         <h3><?= isset($technology[0]) ? $technology[0]->{'value_' . Yii::$app->language} : '' ?></h3>
