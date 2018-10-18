@@ -7,6 +7,7 @@ use common\models\Menu;
 use common\models\Post;
 use common\models\Product;
 use common\models\Settings;
+use common\models\Subscribers;
 use Yii;
 use yii\base\InvalidParamException;
 use yii\web\BadRequestHttpException;
@@ -88,6 +89,15 @@ class SiteController extends Controller
         $gallery = Media::find()->where(['type' => '3'])->orderBy(['id' => SORT_DESC])->all();
         $slider2_text = Settings::find()->where(['kay' => 'slider2_text'])->one();
         $subscribe = Settings::find()->where(['kay' => ['subscribe_photo', 'subscribe_title', 'subscribe_text']])->all();
+        $model = new Subscribers();
+        if($model->load(Yii::$app->request->post()) && $model->save()){
+            Yii::$app->session->setFlash('massage', Yii::t('app','Thanks for subscription please check your email'));
+            $model->sendEmail();
+        }elseif($model->getErrors()){
+            Yii::$app->session->setFlash('massage', Yii::t('app',$model->getErrors('email')[0]));
+        }
+
+
 //        var_dump($technology);die;
         return $this->render('index', [
             'posts' => $posts,
@@ -99,7 +109,18 @@ class SiteController extends Controller
             'slider2_text' => $slider2_text,
             'subscribe' => $subscribe,
             'gallery' => $gallery,
+            'model' => $model,
         ]);
+    }
+    public function actionAcceptSubscribe(){
+        if($email = Yii::$app->request->get('email') && $token = Yii::$app->request->get('token')){
+            $subscriber = Subscribers::find()->where(['email' => $email])->andWhere(['token' => $token])->one();
+            if($subscriber){
+                $subscriber->active = true;
+                $subscriber->save();
+            }
+        }
+        return $this->goHome();
     }
 
     /**
@@ -252,6 +273,7 @@ class SiteController extends Controller
         $posts = Post::find()->with('media')->orderBy(['id' => SORT_DESC])->limit(3)->all();
         return $this->render('post', ['post' => $post, 'posts' => $posts]);
     }
+
 
     public function actionProduct($id)
     {

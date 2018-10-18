@@ -114,6 +114,12 @@ $this_user = Yii::$app->user->identity;
                                     <span class="sidebar-text"><?php echo Yii::t('app', 'Settings'); ?></span></a>
                             </li>
                         <?php endif; ?>
+                        <?php if (Yii::$app->user->identity->can('Subscribers', 'read')): ?>
+                            <li class="<?php echo Yii::$app->controller->id == "subscribers" ? "current" : ""; ?>">
+                                <a href="<?php echo Url::to(['subscribers/index']) ?>"><i class="fa fa-bank "></i>
+                                    <span class="sidebar-text"><?php echo Yii::t('app', 'Subscribers'); ?></span></a>
+                            </li>
+                        <?php endif; ?>
                     </ul>
                 </div>
             </nav>

@@ -1,3 +1,9 @@
+<?php if (Yii::$app->session->hasFlash('message')): ?>
+    <div class="alert alert-success alert-dismissable">
+        <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+        <?= Yii::$app->session->getFlash('message') ?>
+    </div>
+<?php endif; ?>
 <section id="sec1">
     <img src="images/sec1.png" alt="" class="sec1_bg">
     <img src="images/sec1-2.png" alt="" class="sec1_bg">
@@ -173,8 +179,14 @@
             <div class="sub_right_style">
                 <p><b><?= isset($subscribe[1]) ? $subscribe[1]->{'value_' . Yii::$app->language} : '' ?></b></p>
                 <p class="sub_text"><?= isset($subscribe[2]) ? $subscribe[2]->{'value_' . Yii::$app->language} : '' ?></p>
-                <input type="text" class="sub_input">
-                <button class="sub_btn"><?= Yii::t('app', 'send') ?></button>
+
+                <?php $form = \yii\widgets\ActiveForm::begin(['enableClientValidation' => true])?>
+
+                <?= $form->field($model,'email')->textInput(['class' => 'sub_input'])->label(false);?>
+
+                <button type="submit" class="sub_btn"><?= Yii::t('app', 'send') ?></button>
+
+                <?php \yii\widgets\ActiveForm::end()?>
             </div>
         </div>
     </div>
