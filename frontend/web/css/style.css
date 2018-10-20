@@ -759,7 +759,6 @@ a:hover {
 
     .sub_left img {
         width: 100%;
-        padding-top: 50%;
     }
 
     .footer1 {
@@ -779,7 +778,7 @@ a:hover {
     }
 
     .sec2_bg {
-        object-fit: cover;
+        object-fit: none;
     }
 
     .custom_navbar-toggle {
@@ -794,14 +793,19 @@ a:hover {
         background-color: #ffffffd9;
     }
 
-    .sub_left{
-         width: 100%;
+    .sub_left {
+        width: 100%;
         float: none;
     }
 
-    .sub_right{
+    .sub_right {
         width: 100%;
         float: none;
+    }
+
+    .subscribe {
+        height: auto;
+        padding-bottom: 20px;
     }
 }
 
