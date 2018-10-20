@@ -751,8 +751,8 @@ a:hover {
     .sub_right_style {
         width: 80%;
         height: auto;
-        margin-top: 0;
-        border-left: 2px solid silver;
+        margin: 0 auto;
+        border: none;
         padding-left: 10px;
         padding-top: 0;
     }
@@ -787,7 +787,21 @@ a:hover {
     }
 
     .nav > li {
-         z-index: 1;
+        z-index: 1;
+    }
+
+    #navbar5 {
+        background-color: #ffffffd9;
+    }
+
+    .sub_left{
+         width: 100%;
+        float: none;
+    }
+
+    .sub_right{
+        width: 100%;
+        float: none;
     }
 }
 
@@ -901,3 +915,4 @@ a:hover {
     margin-bottom: 50px;
     text-align: start;
 }
+
