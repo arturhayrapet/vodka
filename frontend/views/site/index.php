@@ -105,7 +105,7 @@
                     <div class="item <?= $key == 0 ? 'active' : "" ?>">
                         <h1><?= $slid->{'title_' . Yii::$app->language} ?></h1>
                         <h3><?= $slid->{'description_' . Yii::$app->language} ?></h3>
-                        <img src="/uploads/<?= $slid->unique_name ?>" alt="mijnaberd">
+                        <img src="/uploads/<?= $slid->unique_name ?>" alt="mijnaberd" class="slid_2">
                     </div>
                 <?php endforeach; ?>
             </div>
@@ -142,8 +142,8 @@
                 </ul>
             </div>
         </div>
-        <div class="gal_btn_prev"><img src="/images/gallery/acard-left.png" alt=""></div>
-        <div class="gal_btn_next"><img src="/images/gallery/acard-right.png" alt=""></div>
+        <div class="gal_btn_prev"><i class="fa fa-angle-left"></i></div>
+        <div class="gal_btn_next"><i class="fa fa-angle-right"></i></div>
     </div>
 </section>
 
