@@ -920,3 +920,6 @@ a:hover {
     text-align: start;
 }
 
+.slide_li img {
+    object-fit: contain;
+}
