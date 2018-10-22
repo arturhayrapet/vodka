@@ -190,6 +190,7 @@ header {
 #sec2 {
     height: 100%;
     width: 100%;
+    position: relative;
 }
 
 .sec2_bg {
@@ -563,7 +564,6 @@ header {
     border: 1px solid;
 }
 
-
 .gal_btn_next {
     right: 7%;
 }
@@ -697,8 +697,12 @@ a:hover {
     }
 
     .hero {
-        right: 0;
+        left: 50% !important;
         top: 20%;
+    }
+
+    #sec2 {
+        height: auto;
     }
 
     #sec3 {
@@ -714,7 +718,7 @@ a:hover {
         width: 55%;
         position: absolute;
         color: white;
-        top: 45%;
+        top: 25%;
         left: 0;
         right: 0;
         bottom: 0;
@@ -722,14 +726,20 @@ a:hover {
     }
 
     .sec4_bg {
-        top: -100px;
-        height: 100%;
-        object-fit: cover;
-        width: 100%;
+        /*top: -100px;*/
+        /*height: 100%;*/
+        /*object-fit: cover;*/
+        /*width: 100%;*/
+        display: none;
     }
 
     #sec4 {
-        height: 100%;
+        height: auto;
+        background-image: linear-gradient(#042e55, #041135);
+    }
+
+    #sec4 h1 {
+        margin-top: 0;
     }
 
     .news_bg {
@@ -787,7 +797,9 @@ a:hover {
     }
 
     .sec2_bg {
-        object-fit: none;
+        object-fit: cover;
+        height: 110%;
+        z-index: -1;
     }
 
     .custom_navbar-toggle {
