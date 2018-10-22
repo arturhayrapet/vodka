@@ -8,9 +8,9 @@ $social = \frontend\components\Helper::getSocial();
         <div class="container">
             <div class="col-md-3"><?= Yii::t('app', 'MIJNABERD') ?></div>
             <div class="col-md-3" style="padding-left: 5%;
-    padding-right: 5%;"><?= $footer[0]->value_am ? $footer[0]->{'value_' . Yii::$app->language} : '' ?></div>
-            <div class="col-md-3"><?= $footer[1]->value_am ? $footer[1]->{'value_' . Yii::$app->language} : '' ?>
-                <br> <?= $footer[2]->value_am ? $footer[2]->{'value_' . Yii::$app->language} : '' ?></div>
+    padding-right: 5%;"><?= isset( $footer[0]->value_am ) ? $footer[0]->{'value_' . Yii::$app->language} : '' ?></div>
+            <div class="col-md-3"><?= isset( $footer[1]->value_am ) ? $footer[1]->{'value_' . Yii::$app->language} : '' ?>
+                <br> <?= isset( $footer[1]->value_am ) ? $footer[2]->{'value_' . Yii::$app->language} : '' ?></div>
             <div class="col-md-3 social_links">
                 <?php if (isset($social[0]) && $social[0]->value_am): ?>
                     <a href="<?= $social[0]->{'value_' . Yii::$app->language} ?>"><i class="fab fa-facebook-f"></i></a>
