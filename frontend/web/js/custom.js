@@ -18,9 +18,16 @@ $(function(){
         lw = ww/3-80 ;
         sl=3;
         i=0;
-        slLength=imgCaunt/2  ;
         yy = ( $("#gallery_slider_wrp").width() - 3* lw ) / 6  ;
-        uw=(imgCaunt/2)*(lw+yy*2 + 2);
+        if ( imgCaunt > 6 ) {
+            slLength = Math.ceil(imgCaunt / 2);
+            uw = (Math.ceil(imgCaunt / 2)) * (lw + yy * 2 + 2);
+        }else {
+            slLength = imgCaunt ;
+            uw = imgCaunt  * (lw + yy * 2 + 2);
+        }
+
+
     }
     console.log(yy);
     $(".slide_li").width(lw);
