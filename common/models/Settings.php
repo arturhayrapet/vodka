@@ -30,7 +30,7 @@ class Settings extends \yii\db\ActiveRecord
     {
         return [
             [['kay','value_am'],'required'],
-            [['kay', 'value_am', 'value_ru', 'value_en'], 'string', 'max' => 255],
+            [['kay', 'value_am', 'value_ru', 'value_en'], 'string'],
         ];
     }
 
