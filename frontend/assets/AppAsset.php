@@ -18,7 +18,7 @@ class AppAsset extends AssetBundle
         'fontawesome-free-5.3.1-web/css/all.css'
     ];
     public $js = [
-        'js/jquery-3.3.1.js',
+        //'js/jquery-3.3.1.js',
         'js/custom.js',
         'bootstrap-3.3.7/dist/js/bootstrap.js',
         'fontawesome-free-5.3.1-web/js/all.js',

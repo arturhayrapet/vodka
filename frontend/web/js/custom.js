@@ -29,7 +29,6 @@ $(function(){
 
 
     }
-    console.log(yy);
     $(".slide_li").width(lw);
     $(".slide_li").css({
         "margin-left" : yy + 'px' ,
@@ -47,7 +46,6 @@ $(function(){
     $(".gal_btn_next").click(function(){
 
         if( i < slLength - sl){
-            console.log(5);
             $(".slide_ul").animate({"left": '-='+(lw + yy*2 + 1) +''});
             i+=1;
             if ( i > 0 ) $(".gal_btn_prev").stop(true,true).fadeIn();

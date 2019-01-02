@@ -204,7 +204,7 @@
   $(document).ready(function () {
         var img_arr = $(\".sec1_bg\");
         for (var i = 1; i < img_arr.length; i++) {
-            $(img_arr[i]).fadeOut();
+            $(img_arr[i]).hide();
         }
        i = 1;
         setInterval(function () {
@@ -218,4 +218,4 @@
         }, 4000);
     });
 
-") ?>
+",yii\web\View::POS_READY) ?>
