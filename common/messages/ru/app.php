@@ -12,6 +12,8 @@ return[
     'Create Metas' => 'Создать Мета',
     'Create Our Hotels' => 'Создать Наши отели',
     'Reviews' => 'Отзывы',
+    'Are you over 18 years old?' => 'Вам уже исполнилось 18 лет?',
+    'The content of the site is intended for viewing only to persons of legal age!' => 'Содержание сайта предназначено для просмотра исключительно лицам достигшим совершеннолетия!',
     'Create Reviews' => 'Создать Отзывы',
     'Our Hotels' => 'Наши отели',
     'room reservation' => 'бронирование комнаты',

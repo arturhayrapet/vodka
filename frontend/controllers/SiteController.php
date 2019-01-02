@@ -274,6 +274,16 @@ class SiteController extends Controller
 //        ]);
     }
 
+    public function actionSetAge($age){
+
+        if($age == 'yes'){
+            Yii::$app->session->set('18+','yes');
+            return $this->goBack('index');
+        }else{
+            return $this->render('plus');
+        }
+    }
+
     public function actionPost($id)
     {
         $this->layout = 'post';
