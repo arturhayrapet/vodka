@@ -13,7 +13,7 @@
     right: 25px;">
             <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
             <?= Yii::$app->session->getFlash('message');
-            $model->clearErrors('email')?>
+            $model->clearErrors('email') ?>
         </div>
     <?php endif; ?>
     <div class="carousel fade-carousel slide" data-ride="carousel" data-interval="4000" id="bs-carousel">
@@ -52,13 +52,18 @@
         <div class="col-md-12 product_title">
             <h1><?= Yii::t('app', 'products') ?></h1>
         </div>
-        <?php foreach ($products as $product): ?>
+        <?php foreach ($products as $key => $product): ?>
             <div class="col-md-4 col-xs-12 about_us_left">
-                <a href="/site/product/<?=$product->id?>">
-                    <img src="/uploads/<?= $product->media ? $product->media->unique_name : '' ?>" alt="#">
-                    <h3><?= $product->{'title_' . Yii::$app->language} ?></h3>
-                    <hr class="hr1">
-                    <p><?= $product->{'description_' . Yii::$app->language} ?></p>
+                <a href="/site/product/<?= $product->id ?>">
+                    <div class="product_img_div">
+                        <img src="/uploads/<?= $product->media ? $product->media->unique_name : '' ?>" alt="#"
+                             class="product_img_<?= $key ?>">
+                    </div>
+                    <div class="product_text">
+                        <h3><?= $product->{'title_' . Yii::$app->language} ?></h3>
+                        <hr class="hr1">
+                        <p><?= $product->{'description_' . Yii::$app->language} ?></p>
+                    </div>
                 </a>
             </div>
         <?php endforeach; ?>
@@ -188,13 +193,13 @@
                 <p><b><?= isset($subscribe[1]) ? $subscribe[1]->{'value_' . Yii::$app->language} : '' ?></b></p>
                 <p class="sub_text"><?= isset($subscribe[2]) ? $subscribe[2]->{'value_' . Yii::$app->language} : '' ?></p>
 
-                <?php $form = \yii\widgets\ActiveForm::begin(['enableClientValidation' => true])?>
+                <?php $form = \yii\widgets\ActiveForm::begin(['enableClientValidation' => true]) ?>
 
-                <?= $form->field($model,'email')->textInput(['class' => 'sub_input'])->label(false);?>
+                <?= $form->field($model, 'email')->textInput(['class' => 'sub_input'])->label(false); ?>
 
                 <button type="submit" class="sub_btn"><?= Yii::t('app', 'send') ?></button>
 
-                <?php \yii\widgets\ActiveForm::end()?>
+                <?php \yii\widgets\ActiveForm::end() ?>
             </div>
         </div>
     </div>
@@ -218,4 +223,4 @@
         }, 4000);
     });
 
-",yii\web\View::POS_READY) ?>
+", yii\web\View::POS_READY) ?>
