@@ -25,7 +25,7 @@ $menus = \frontend\components\Helper::getMenus();
                 </div>
                 <!--/.nav-collapse -->
                 <div class="languages">
-                    <a href="/am">am</a> /
+                    <a href="/am/<?= Yii::$app->request->getPathInfo()?>">am</a> /
                     <a href="/ru">ru</a> /
                     <a href="/en">en</a>
                 </div>

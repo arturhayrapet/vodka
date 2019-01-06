@@ -2,8 +2,8 @@
 $footer = \frontend\components\Helper::getFooter();
 $social = \frontend\components\Helper::getSocial();
 ?>
-    <button type="button" class="btn btn-primary plusbutton hidden" data-toggle="modal" data-target="#plusModal"></button>
-    <div class="modal fade" id="plusModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+    <button type="button" class="btn btn-primary plusbutton hidden" data-backdrop="static" data-keyboard="false" data-toggle="modal" data-target="#plusModal"></button>
+    <div class="modal fade" id="plusModal"  tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
          style="display: none;">
         <div class="modal-dialog" role="document">
             <div class="modal-content">

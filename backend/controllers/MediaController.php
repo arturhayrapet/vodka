@@ -5,6 +5,7 @@ namespace backend\controllers;
 use Yii;
 use common\models\Media;
 use common\models\MediaSearch;
+use yii\filters\AccessControl;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -21,6 +22,15 @@ class MediaController extends Controller
     public function behaviors()
     {
         return [
+            'access' => [
+                'class' => AccessControl::className(),
+                'rules' => [
+                    [
+                        'allow' => true,
+                        'roles' => ['@'],
+                    ],
+                ],
+            ],
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [
@@ -72,10 +82,10 @@ class MediaController extends Controller
             $model->img = UploadedFile::getInstance($model, 'img');
 
             if ($model->img && $model->validate()) {
-                $model->unique_name = 'f'.time().'.'.$model->img->extension;
-                if(!is_dir(yii::getAlias('@frontend').DIRECTORY_SEPARATOR.'web'.DIRECTORY_SEPARATOR.'uploads'))
-                    mkdir(yii::getAlias('@frontend').DIRECTORY_SEPARATOR.'web'.DIRECTORY_SEPARATOR.'uploads');
-                $model->img->saveAs(yii::getAlias('@frontend').DIRECTORY_SEPARATOR.'web'.DIRECTORY_SEPARATOR.'uploads'.DIRECTORY_SEPARATOR.$model->unique_name);
+                $model->unique_name = 'f' . time() . '.' . $model->img->extension;
+                if (!is_dir(yii::getAlias('@frontend') . DIRECTORY_SEPARATOR . 'web' . DIRECTORY_SEPARATOR . 'uploads'))
+                    mkdir(yii::getAlias('@frontend') . DIRECTORY_SEPARATOR . 'web' . DIRECTORY_SEPARATOR . 'uploads');
+                $model->img->saveAs(yii::getAlias('@frontend') . DIRECTORY_SEPARATOR . 'web' . DIRECTORY_SEPARATOR . 'uploads' . DIRECTORY_SEPARATOR . $model->unique_name);
             }
             $model->save();
             return $this->redirect(['view', 'id' => $model->id]);
@@ -98,34 +108,30 @@ class MediaController extends Controller
     {
 
         $model = $this->findModel($id);
-        $u_n = $model->unique_name ;
+        $u_n = $model->unique_name;
         $ex = $model->img;
         $model->oldLink = $u_n;
 
-        if ($model->load(Yii::$app->request->post()))
-        {
+        if ($model->load(Yii::$app->request->post())) {
             $model->img = UploadedFile::getInstance($model, 'img');
 
-            if(!$model->img) {
+            if (!$model->img) {
                 $model->img = $ex;
                 $model->unique_name = $u_n;
+            } else {
+                $model->unique_name = 'f' . time() . '.' . $model->img->extension;
+                if (!is_dir(yii::getAlias('@frontend') . DIRECTORY_SEPARATOR . 'web' . DIRECTORY_SEPARATOR . 'uploads'))
+                    mkdir(yii::getAlias('@frontend') . DIRECTORY_SEPARATOR . 'web' . DIRECTORY_SEPARATOR . 'uploads');
+                $model->img->saveAs(yii::getAlias('@frontend') . DIRECTORY_SEPARATOR . 'web' . DIRECTORY_SEPARATOR . 'uploads' . DIRECTORY_SEPARATOR . $model->unique_name);
+                if ($u_n)
+                    if (is_file(yii::getAlias('@frontend') . DIRECTORY_SEPARATOR . 'web' . DIRECTORY_SEPARATOR . 'uploads' . DIRECTORY_SEPARATOR . $u_n))
+                        unlink(yii::getAlias('@frontend') . DIRECTORY_SEPARATOR . 'web' . DIRECTORY_SEPARATOR . 'uploads' . DIRECTORY_SEPARATOR . $u_n);
             }
-            else
-                {
-                    $model->unique_name = 'f'.time().'.'.$model->img->extension;
-                    if(!is_dir(yii::getAlias('@frontend').DIRECTORY_SEPARATOR.'web'.DIRECTORY_SEPARATOR.'uploads'))
-                        mkdir(yii::getAlias('@frontend').DIRECTORY_SEPARATOR.'web'.DIRECTORY_SEPARATOR.'uploads');
-                    $model->img->saveAs(yii::getAlias('@frontend').DIRECTORY_SEPARATOR.'web'.DIRECTORY_SEPARATOR.'uploads'.DIRECTORY_SEPARATOR.$model->unique_name);
-                    if($u_n)
-                        if(is_file(yii::getAlias('@frontend') . DIRECTORY_SEPARATOR . 'web' . DIRECTORY_SEPARATOR . 'uploads' . DIRECTORY_SEPARATOR . $u_n))
-                            unlink(yii::getAlias('@frontend') . DIRECTORY_SEPARATOR . 'web' . DIRECTORY_SEPARATOR . 'uploads' . DIRECTORY_SEPARATOR . $u_n );
-                    }
 
-            if ($model->validate())
-             {
+            if ($model->validate()) {
                 $model->save();
 
-             }
+            }
             return $this->redirect(['view', 'id' => $model->id]);
         }
 
@@ -147,9 +153,9 @@ class MediaController extends Controller
         $u_n = $model->unique_name;
 
         $this->findModel($id)->delete();
-        if($u_n)
-            if(is_file(yii::getAlias('@frontend') . DIRECTORY_SEPARATOR . 'web' . DIRECTORY_SEPARATOR . 'uploads' . DIRECTORY_SEPARATOR . $u_n))
-                unlink(yii::getAlias('@frontend') . DIRECTORY_SEPARATOR . 'web' . DIRECTORY_SEPARATOR . 'uploads' . DIRECTORY_SEPARATOR . $u_n );
+        if ($u_n)
+            if (is_file(yii::getAlias('@frontend') . DIRECTORY_SEPARATOR . 'web' . DIRECTORY_SEPARATOR . 'uploads' . DIRECTORY_SEPARATOR . $u_n))
+                unlink(yii::getAlias('@frontend') . DIRECTORY_SEPARATOR . 'web' . DIRECTORY_SEPARATOR . 'uploads' . DIRECTORY_SEPARATOR . $u_n);
 
 
         return $this->redirect(['index']);

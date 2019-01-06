@@ -44,6 +44,7 @@ return [
             'showScriptName' => false,
             'rules' => [
                 'accept' => 'site/accept-subscribe',
+                'about' => 'site/about',
                 '<controller>/<action>' => '<controller>/<action>',
                 '<controller>/<action>/<id:\d+>' => '<controller>/<action>',
             ],

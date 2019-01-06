@@ -7,6 +7,7 @@ use common\models\Post;
 use common\models\Media;
 
 use common\models\PostSearch;
+use yii\filters\AccessControl;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -22,6 +23,15 @@ class PostController extends Controller
     public function behaviors()
     {
         return [
+            'access' => [
+                'class' => AccessControl::className(),
+                'rules' => [
+                    [
+                        'allow' => true,
+                        'roles' => ['@'],
+                    ],
+                ],
+            ],
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [
@@ -71,7 +81,7 @@ class PostController extends Controller
         $media = Media::find()->all();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            if($model->subscribers){
+            if ($model->subscribers) {
                 $model->sendEmail();
             }
             return $this->redirect(['view', 'id' => $model->id]);
