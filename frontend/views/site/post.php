@@ -25,7 +25,7 @@
                             <div style="padding: 10px">
                                 <p><b><?= $post->{'title_' . Yii::$app->language} ?></b></p>
                                 <hr style="width: 50%;border-top: 2px solid; margin-left: 0;">
-                                <p><?= $post->{'content_' . Yii::$app->language} ?></p>
+                                <p><?= $post->{'caption_' . Yii::$app->language} ?></p>
                             </div>
                         </div>
                     </a>
