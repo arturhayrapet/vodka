@@ -13,8 +13,8 @@ $this->params['breadcrumbs'][] = $this->title;
     <div class="container">
         <div class="row">
             <div class="col-md-5 col-xs-12">
-                <?php if (isset($about[4])): ?>
-                    <img src="<?= $about[4]->{'value_' . Yii::$app->language} ?>" alt="About" width="100%">
+                <?php if (isset($about[5])): ?>
+                    <img src="<?= $about[5]->{'value_' . Yii::$app->language} ?>" alt="About" width="100%">
                 <?php endif; ?>
             </div>
             <div class="col-md-7 col-xs-12">
@@ -24,6 +24,13 @@ $this->params['breadcrumbs'][] = $this->title;
                 <p><?= isset($about[2]) ? $about[2]->{'value_' . Yii::$app->language} : '' ?></p>
                 <hr class="abour_hr3">
                 <p><?= isset($about[3]) ? $about[3]->{'value_' . Yii::$app->language} : '' ?></p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <p class="about_text_4">
+                    <?= isset($about[4]) ? $about[4]->{'value_' . Yii::$app->language} : '' ?>
+                </p>
             </div>
         </div>
     </div>

@@ -2,6 +2,7 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+use yii\redactor\widgets\Redactor;
 
 /* @var $this yii\web\View */
 /* @var $model common\models\Settings */
@@ -25,13 +26,25 @@ use yii\widgets\ActiveForm;
         <?= $form->field($model, 'kay')->textInput(['maxlength' => true]) ?>
         <div class="tab-content">
             <div class="tab-pane fade active in" id="am">
-                <?= $form->field($model, 'value_am')->textInput(['maxlength' => true]) ?>
+                <?= $form->field($model, 'value_am')->widget(Redactor::className(),[
+                    'clientOptions' => [
+                        'paragraphize' => false,
+                    ]
+                ]) ?>
             </div>
             <div class="tab-pane fade" id="ru">
-                <?= $form->field($model, 'value_ru')->textInput(['maxlength' => true]) ?>
+                <?= $form->field($model, 'value_ru')->widget(Redactor::className(),[
+                    'clientOptions' => [
+                        'paragraphize' => false,
+                    ]
+                ]) ?>
             </div>
             <div class="tab-pane fade" id="en">
-                <?= $form->field($model, 'value_en')->textInput(['maxlength' => true]) ?>
+                <?= $form->field($model, 'value_en')->widget(Redactor::className(),[
+                    'clientOptions' => [
+                        'paragraphize' => false,
+                    ]
+                ]) ?>
             </div>
             <div class="form-group">
                 <?= Html::submitButton(Yii::t('app', 'Save'), ['class' => 'btn btn-success']) ?>

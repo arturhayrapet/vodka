@@ -24,8 +24,9 @@ header {
     position: fixed;
     width: 100% !important;
     z-index: 10;
-    height: 80px;
+    height: 94px;
     top: 0;
+    background: #ffffff38;
 }
 
 /*slider*/
@@ -270,7 +271,7 @@ header {
 #sec4 h1 {
     text-align: center;
     text-transform: uppercase;
-    padding-top: 11%;
+    padding-top: 5%;
     color: white;
     padding-bottom: 50px;
 }
@@ -396,16 +397,20 @@ header {
     border: 1px solid;
     position: relative;
     padding-left: 0;
+    height: 100%;
 }
 
 .text_style {
     color: #042c52;
     padding-top: 20px;
     padding-bottom: 20px;
+    height: 100%;
+    overflow: hidden;
 }
 
 .post_box_col {
     margin-bottom: 10px;
+    height: 200px;
 }
 
 .sub_bg {
@@ -606,6 +611,11 @@ header {
 
 .post_number {
     padding: 0;
+    height: 100%;
+}
+
+.post_number img {
+    height: 100%;
 }
 
 .hr1, .hr2, .hr3 {
@@ -681,7 +691,7 @@ a:hover {
 }
 
 .languages a {
-    color: #777;
+    color: black;
 }
 
 @media screen and (max-width: 780px) {
@@ -860,20 +870,9 @@ a:hover {
 }
 
 .abour_hr1, .abour_hr2, .abour_hr3 {
-    width: 10%;
+    width: 50%;
     margin-left: 0;
-}
-
-.abour_hr1 {
-    border-top: 3px solid green;
-}
-
-.abour_hr2 {
-    border-top: 3px solid darkviolet;
-}
-
-.abour_hr3 {
-    border-top: 3px solid orangered;
+    border-top: 3px solid #0d173a;
 }
 
 .site-contact {
@@ -963,11 +962,33 @@ a:hover {
     width: 70%;
     height: auto;
 }
+
 .product_img_0 {
-    width: 50%;
+    width: 60%;
     height: auto;
 }
+
 .product_img_2 {
     width: 60%;
     height: auto;
+}
+
+.about_text_4 {
+    padding: 50px 0 20px 0;
+}
+
+.about_text h1 {
+    text-transform: uppercase;
+}
+
+.sec_gallery h1 {
+    text-transform: uppercase;
+}
+
+.sec_news h1 {
+    text-transform: uppercase;
+}
+
+#navbar5 a {
+    color: black !important;
 }

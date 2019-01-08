@@ -1,7 +1,7 @@
 <section id="sec1">
     <img src="/images/sec1.png" alt="" class="sec1_bg">
-    <img src="/images/sec1-2.png" alt="" class="sec1_bg">
-    <img src="/images/sec1-3.png" alt="" class="sec1_bg">
+    <img src="/images/sec1.png" alt="" class="sec1_bg">
+    <img src="/images/sec1.png" alt="" class="sec1_bg">
     <?php if (Yii::$app->session->hasFlash('message')): ?>
         <div class="alert alert-success alert-dismissable" style="z-index: 999999999999;
     color: #3c763d;
@@ -169,7 +169,7 @@
                         </div>
                         <div class="col-md-9 col-xs-9 text_style">
                             <b><?= $post->{'title_' . Yii::$app->language} ?></b>
-                            <p><?= $post->{'content_' . Yii::$app->language} ?></p>
+                            <p><?= $post->{'caption_' . Yii::$app->language} ?></p>
                             <hr style="border-top: 1px solid #042c52;">
                         </div>
                     </div>

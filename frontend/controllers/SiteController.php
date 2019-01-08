@@ -195,7 +195,8 @@ class SiteController extends Controller
     public function actionAbout()
     {
         $this->layout = 'post';
-        $about = Settings::find()->where(['kay' => ['about_description', 'about_text1', 'about_text2', 'about_text3','about_image']])->all();
+        $about = Settings::find()->where(['kay' => ['about_description', 'about_text1', 'about_text2', 'about_text3','about_text4','about_image']])->all();
+
         return $this->render('about', [
             'about' => $about
         ]);
