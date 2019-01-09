@@ -192,6 +192,7 @@ header {
     height: auto;
     width: 100%;
     position: relative;
+    padding-bottom: 50px;
 }
 
 .sec2_bg {
@@ -849,11 +850,11 @@ a:hover {
     }
 
     .sec4_bg {
-        top: -100px;
+        top: -130px;
     }
 
     .sec2_bg {
-        object-fit: cover;
+        object-fit: none;
     }
 }
 
