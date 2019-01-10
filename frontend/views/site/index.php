@@ -179,7 +179,7 @@
     </div>
 </section>
 <section class="sec_sub">
-    <img src="/images/sec_sub.png" alt="" class="sub_bg">
+    <img src="/images/sec_sub.jpg" alt="" class="sub_bg">
     <div class="subscribe">
         <h1><?= Yii::t('app', 'STAY IN TOUCH') ?></h1>
         <div class="sub_left">

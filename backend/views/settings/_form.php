@@ -29,6 +29,7 @@ use yii\redactor\widgets\Redactor;
                 <?= $form->field($model, 'value_am')->widget(Redactor::className(),[
                     'clientOptions' => [
                         'paragraphize' => false,
+                        'plugins' => ['fontcolor','fontfamily','fontsize','alignment']
                     ]
                 ]) ?>
             </div>
@@ -36,6 +37,7 @@ use yii\redactor\widgets\Redactor;
                 <?= $form->field($model, 'value_ru')->widget(Redactor::className(),[
                     'clientOptions' => [
                         'paragraphize' => false,
+                        'plugins' => ['fontcolor','fontfamily','fontsize','alignment']
                     ]
                 ]) ?>
             </div>
@@ -43,6 +45,7 @@ use yii\redactor\widgets\Redactor;
                 <?= $form->field($model, 'value_en')->widget(Redactor::className(),[
                     'clientOptions' => [
                         'paragraphize' => false,
+                        'plugins' => ['fontcolor','fontfamily','fontsize','alignment']
                     ]
                 ]) ?>
             </div>
