@@ -1,6 +1,14 @@
 <?php
 return[
     'Update' => 'Обновить',
+    'products' => 'Продукция',
+    'New aroma' => 'Новый аромат',
+    'Technology' => 'Технология',
+    'Stay in touch' => 'Оставайтесь с нами',
+    'Apricot' => 'Абрикос',
+    'About us' => 'О нас',
+    'News' => 'Новости',
+    'Mulberry' => 'Тутовник',
     'Subscribers' => 'Подписчики',
     'Meta' => 'Мета',
     'New' => 'новый',
@@ -113,7 +121,6 @@ return[
     'Created At' => 'Создан',
     'Create' => 'Создайть',
     'Updated At' => 'Обновлено',
-    'Update' => 'Обновить',
     'Create Posts' => 'Создание Записи',
     'Create Menus' => 'Создание меню',
     'Sort Menus' => 'Сортировка меню',

@@ -439,6 +439,7 @@ header {
 
 .subscribe h1 {
     text-align: center;
+    text-transform: uppercase;
 }
 
 .sub_left {
@@ -864,16 +865,15 @@ a:hover {
 }
 
 .about_desc {
-    text-align: center;
     font-size: 12px;
-    margin: 0 auto 50px auto;
-    width: 60%;
+    margin: 2% 0 0px auto;
+    width: 56%;
 }
 
 .abour_hr1, .abour_hr2, .abour_hr3 {
     width: 50%;
     margin-left: 0;
-    border-top: 3px solid #0d173a;
+    border-top: 3px solid transparent;
 }
 
 .site-contact {

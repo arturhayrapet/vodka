@@ -8,7 +8,7 @@ $this->title = 'About';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="site-about">
-    <h1 style="text-align: center"><?= Yii::t('app', 'About Us') ?></h1>
+    <h1 style="text-align: center"><?= Yii::t('app', 'About us') ?></h1>
     <p class="about_desc"><?= isset($about[0]) ? $about[0]->{'value_' . Yii::$app->language} : '' ?></p>
     <div class="container">
         <div class="row">

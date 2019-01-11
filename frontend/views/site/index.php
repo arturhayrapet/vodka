@@ -74,14 +74,14 @@
     <a name="technology" class="scroll_technology"></a>
     <img src="/images/sec3bg.jpg" alt="" class="sec3_bg">
     <div class="about_text">
-        <h1><?= Yii::t('app', 'technology') ?></h1>
+        <h1><?= Yii::t('app', 'Technology') ?></h1>
         <h3><?= isset($technology[0]) ? $technology[0]->{'value_' . Yii::$app->language} : '' ?></h3>
         <p><?= isset($technology[1]) ? $technology[1]->{'value_' . Yii::$app->language} : '' ?></p>
     </div>
 </section>
 <section id="sec4">
     <img src="/images/sec4bg.svg" alt="" class="sec4_bg">
-    <h1><?= Yii::t('app', 'New Aromat') ?></h1>
+    <h1><?= Yii::t('app', 'New aroma') ?></h1>
     <div class="container">
         <div class="row">
             <?php foreach ($aromats as $aromat): ?>
@@ -134,7 +134,7 @@
 
 
 <section id="gallery" class="sec_gallery">
-    <h1><?= Yii::t('app', 'gallery') ?></h1>
+    <h1><?= Yii::t('app', 'Gallery') ?></h1>
     <div id="gallery_slider_wrp" class="container">
         <div class="galery">
             <div class="slide">
@@ -157,7 +157,7 @@
 
 <section class="sec_news">
     <img src="/images/newsBG.svg" alt="" class="news_bg">
-    <h1><?= Yii::t('app', 'news') ?></h1>
+    <h1><?= Yii::t('app', 'News') ?></h1>
     <div class="container">
         <?php foreach ($posts as $key => $post): ?>
             <a href="/site/post/<?= $post->id ?>">
@@ -181,7 +181,7 @@
 <section class="sec_sub">
     <img src="/images/sec_sub.jpg" alt="" class="sub_bg">
     <div class="subscribe">
-        <h1><?= Yii::t('app', 'STAY IN TOUCH') ?></h1>
+        <h1><?= Yii::t('app', 'Stay in touch') ?></h1>
         <div class="sub_left">
             <?php if (isset($subscribe[0])): ?>
                 <img src="<?= $subscribe[0]->{'value_' . Yii::$app->language} ?>"
