@@ -31,7 +31,7 @@ $social = \frontend\components\Helper::getSocial();
     <footer>
         <div class="footer1">
             <div class="container">
-                <div class="col-md-3"><?= Yii::t('app', 'MIJNABERD') ?></div>
+                <div class="col-md-3"><?= Yii::t('app', 'MIDJNABERD ALCO') ?></div>
                 <div class="col-md-3" style="padding-left: 5%;
     padding-right: 5%;"><?= isset($footer[0]->value_am) ? $footer[0]->{'value_' . Yii::$app->language} : '' ?></div>
                 <div class="col-md-3"><?= isset($footer[1]->value_am) ? $footer[1]->{'value_' . Yii::$app->language} : '' ?>

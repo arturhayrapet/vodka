@@ -8,6 +8,7 @@ return[
     'Apricot' => 'Абрикос',
     'About us' => 'О нас',
     'News' => 'Новости',
+    'MIDJNABERD ALCO' => 'МИДЖНАБЕРД АЛКО',
     'Mulberry' => 'Тутовник',
     'Subscribers' => 'Подписчики',
     'Meta' => 'Мета',

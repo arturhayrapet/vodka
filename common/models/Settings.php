@@ -29,7 +29,7 @@ class Settings extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['kay','value_am'],'required'],
+            [['kay'],'required'],
             [['kay', 'value_am', 'value_ru', 'value_en'], 'string'],
         ];
     }

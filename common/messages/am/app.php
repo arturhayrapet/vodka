@@ -6,6 +6,7 @@
 return [
     'Finance and Business' =>'Ֆինանսներ և Բիզնես',
     'Update' => 'Թարմացնել',
+    'MIDJNABERD ALCO' => 'ՄԻՋՆԱԲԵՐԴ ԱԼԿՈ',
     'Stay in touch' => 'Մնացեկ կապի մեջ',
     'Technology' => 'Տեխնոլոգիա',
     'products' => 'արտադրանք',
