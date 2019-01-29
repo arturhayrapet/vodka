@@ -1,6 +1,7 @@
 <?php
 
 /* @var $this \yii\web\View */
+
 /* @var $content string */
 
 use yii\helpers\Html;
@@ -33,13 +34,15 @@ $menus = \frontend\components\Helper::getMenus();
         <nav class="navbar navbar-default custom_navbar">
             <div class="container-fluid">
                 <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed custom_navbar-toggle" data-toggle="collapse" data-target="#navbar5">
+                    <button type="button" class="navbar-toggle collapsed custom_navbar-toggle" data-toggle="collapse"
+                            data-target="#navbar5">
                         <span class="sr-only">Toggle navigation</span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="/"><img style="	width: 100px;" src="/images/logo_white.png" alt="logo">
+                    <a class="navbar-brand" href="/"><img style="	width: 100px;" src="/images/logo_white.png"
+                                                          alt="logo">
                     </a>
                 </div>
                 <div id="navbar5" class="navbar-collapse collapse">
@@ -51,9 +54,11 @@ $menus = \frontend\components\Helper::getMenus();
                 </div>
                 <!--/.nav-collapse -->
                 <div class="languages">
-                    <a href="/am/<?= Yii::$app->request->getPathInfo()?>">am</a> /
-                    <a href="/ru/<?= Yii::$app->request->getPathInfo()?>">ru</a> /
-                    <a href="/en/<?= Yii::$app->request->getPathInfo()?>">en</a>
+                    <a href="/am/<?= Yii::$app->request->queryString ? Yii::$app->request->getPathInfo() . '?' . Yii::$app->request->queryString : Yii::$app->request->getPathInfo() ?>">am</a>
+                    /
+                    <a href="/ru/<?= Yii::$app->request->queryString ? Yii::$app->request->getPathInfo() . '?' . Yii::$app->request->queryString : Yii::$app->request->getPathInfo() ?>">ru</a>
+                    /
+                    <a href="/en/<?= Yii::$app->request->queryString ? Yii::$app->request->getPathInfo() . '?' . Yii::$app->request->queryString : Yii::$app->request->getPathInfo() ?>">en</a>
                 </div>
             </div>
             <!--/.container-fluid -->
