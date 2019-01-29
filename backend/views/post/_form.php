@@ -51,7 +51,7 @@ $this->registerJsFile(
             <div class="tab-pane fade" id="en">
                 <?= $form->field($model, 'title_en')->textInput(['maxlength' => true]) ?>
                 <?= $form->field($model, 'caption_en')->textInput(['maxlength' => true]) ?>
-                <?= $form->field($model, 'content_en')->widget(Redactor::className(),[
+                <?= $form->field($model, 'content_en')->widget(Redactor::className(), [
                     'clientOptions' => [
                         'paragraphize' => false,
                     ]
@@ -64,6 +64,7 @@ $this->registerJsFile(
 
 
         <?= $form->field($model, 'type')->textInput(['maxlength' => true]) ?>
+        <?= $form->field($model, 'manual_date')->textInput(['maxlength' => true]) ?>
 
 
         <?= $form->field($model, 'subscribers')->checkbox() ?>

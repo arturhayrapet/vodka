@@ -20,6 +20,7 @@ use Yii;
  * @property string $picture
  * @property string $type
  * @property string $subscribers
+ * @property string $manual_date
  */
 class Post extends \yii\db\ActiveRecord
 {
@@ -43,7 +44,7 @@ class Post extends \yii\db\ActiveRecord
     {
         return [
             [['title_am', 'caption_am', 'content_am'], 'required'],
-            [['content_am', 'content_ru', 'content_en'], 'string'],
+            [['content_am', 'content_ru', 'content_en','manual_date'], 'string'],
             [['subscribers'], 'safe'],
             [['title_am', 'title_ru', 'title_en', 'caption_am', 'caption_ru', 'caption_en', 'picture', 'type'], 'string', 'max' => 255],
         ];
@@ -88,6 +89,7 @@ class Post extends \yii\db\ActiveRecord
             'picture' => Yii::t('app', 'Picture'),
             'type' => Yii::t('app', 'Type'),
             'subscribers' => Yii::t('app', 'Subscribers'),
+            'manual_date' => Yii::t('app', 'Manual date'),
         ];
     }
 }

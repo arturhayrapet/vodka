@@ -411,7 +411,7 @@ header {
 
 .post_box_col {
     margin-bottom: 10px;
-    height: 200px;
+    height: 100px;
 }
 
 .sub_bg {
@@ -605,9 +605,9 @@ header {
 .post_number span {
     position: absolute;
     top: 35%;
-    left: 35%;
+    left: 15px;
     color: white;
-    font-size: 30px;
+    font-size: 20px;
     font-weight: bold;
 }
 
@@ -1005,4 +1005,9 @@ a:hover {
 .content_div {
     width: 60%;
     margin: auto;
+}
+
+.date_stile {
+    text-align: end;
+    padding-top: 15px;
 }

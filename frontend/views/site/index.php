@@ -169,8 +169,10 @@
                         </div>
                         <div class="col-md-9 col-xs-9 text_style">
                             <b><?= $post->{'title_' . Yii::$app->language} ?></b>
-                            <p><?= $post->{'caption_' . Yii::$app->language} ?></p>
-                            <hr style="border-top: 1px solid #042c52;">
+                            <!--                            <p>-->
+                            <?php //$post->{'caption_' . Yii::$app->language} ?><!--</p>-->
+                            <!--                            <hr style="border-top: 1px solid #042c52;">-->
+                            <p class="date_stile"><?= isset($post->manual_date) ? $post->manual_date : '' ?></p>
                         </div>
                     </div>
                 </div>
