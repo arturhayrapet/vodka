@@ -7,9 +7,11 @@
                     <img src="/uploads/<?= $product->media->unique_name ?>" alt="" width="35%">
                 <?php endif; ?>
             </div>
-            <p class="post_text">
-                <?= $product->{'content_' . Yii::$app->language} ?>
-            </p>
+            <div class="content_div">
+                <p class="post_text">
+                    <?= $product->{'content_' . Yii::$app->language} ?>
+                </p>
+            </div>
         </div>
         <div class="row" style="margin-top: 100px; margin-bottom: 100px">
             <?php foreach ($products as $post): ?>

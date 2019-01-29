@@ -1001,3 +1001,8 @@ a:hover {
 .post_header .languages a {
     color: white !important;
 }
+
+.content_div {
+    width: 60%;
+    margin: auto;
+}

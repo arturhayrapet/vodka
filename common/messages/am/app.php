@@ -6,7 +6,7 @@
 return [
     'Finance and Business' =>'Ֆինանսներ և Բիզնես',
     'Update' => 'Թարմացնել',
-    'MIDJNABERD ALCO' => 'ՄԻՋՆԱԲԵՐԴ ԱԼԿՈ',
+    'MIJNABERD ALCO LLC' => 'ՄԻՋՆԱԲԵՐԴ ԱԼԿՈ ՍՊԸ',
     'Stay in touch' => 'Մնացեկ կապի մեջ',
     'Technology' => 'Տեխնոլոգիա',
     'products' => 'արտադրանք',
