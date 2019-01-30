@@ -55,7 +55,7 @@ $social = \frontend\components\Helper::getSocial();
             </div>
         </div>
         <div class="footer2">
-            <p><?= date('Y') . Yii::t('app', 'MIJNABERD ALCO LLC. All rights reserved'); ?></p>
+            <p><?= date('Y') . Yii::t('app', ' MIJNABERD ALCO LLC. All rights reserved'); ?></p>
         </div>
     </footer>
 
