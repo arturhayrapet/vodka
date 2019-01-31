@@ -86,7 +86,6 @@ return[
     'Left' => 'Слева',
     'Update Menu' => 'Обновление Меню',
     'Import' => 'Импорт',
-    'products' => 'Продукты',
     'Location' => 'Местоположение',
     'Choose location' => 'Выберите местоположение',
     'Export' => 'Экспорт',

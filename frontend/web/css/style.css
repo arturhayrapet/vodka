@@ -272,7 +272,7 @@ header {
 #sec4 h1 {
     text-align: center;
     text-transform: uppercase;
-    padding-top: 5%;
+    padding-top: 0;
     color: white;
     padding-bottom: 50px;
 }
@@ -443,13 +443,11 @@ header {
 }
 
 .sub_left {
-
     width: 40%;
-
     float: left;
-
     text-align: center;
-
+    padding-top: 5%;
+    padding-bottom: 2%;
 }
 
 .sub_left img {
@@ -673,7 +671,9 @@ header {
 
 .post_text {
     padding-top: 50px;
-    padding-bottom: 50px;
+    /*padding-bottom: 50px;*/
+    /*width: 60%;*/
+    margin: auto;
 }
 
 .post_header {
@@ -866,8 +866,8 @@ a:hover {
 
 .about_desc {
     font-size: 12px;
-    margin: 2% 80px 0 auto;
-    width: 50%;
+    /*margin: 2% 80px 0 auto;*/
+    /*width: 50%;*/
 }
 
 .abour_hr1, .abour_hr2, .abour_hr3 {
@@ -1010,4 +1010,36 @@ a:hover {
 .date_stile {
     text-align: end;
     padding-top: 15px;
+}
+
+.news_text {
+    height: 100px;
+}
+
+.text_line p {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.text_line2 p {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+@media screen and(min-width: 1336px) {
+    .hero {
+        right: -40%;
+    }
+}
+
+.text_line3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    height: 100px;
 }

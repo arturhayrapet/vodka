@@ -8,9 +8,9 @@
                 <?php endif; ?>
             </div>
             <div class="content_div">
-                <p class="post_text">
+                <div class="post_text">
                     <?= $product->{'content_' . Yii::$app->language} ?>
-                </p>
+                </div>
             </div>
         </div>
         <div class="row" style="margin-top: 100px; margin-bottom: 100px">
@@ -27,7 +27,7 @@
                             <div style="padding: 10px">
                                 <p><b><?= $post->{'title_' . Yii::$app->language} ?></b></p>
                                 <hr style="width: 50%;border-top: 2px solid; margin-left: 0;">
-                                <p><?= $post->{'content_' . Yii::$app->language} ?></p>
+                                <div class="text_line3"><?= $post->{'content_' . Yii::$app->language} ?></div>
                             </div>
                         </div>
                     </a>

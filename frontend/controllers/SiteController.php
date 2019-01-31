@@ -91,11 +91,11 @@ class SiteController extends Controller
         $slider2_text = Settings::find()->where(['kay' => 'slider2_text'])->one();
         $subscribe = Settings::find()->where(['kay' => ['subscribe_photo', 'subscribe_title', 'subscribe_text']])->all();
         $model = new Subscribers();
-        if($model->load(Yii::$app->request->post()) && $model->save()){
-            Yii::$app->session->setFlash('message', Yii::t('app','Thanks for subscription please check your email'));
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            Yii::$app->session->setFlash('message', Yii::t('app', 'Thanks for subscription please check your email'));
             $model->sendEmail();
-        }elseif($model->getErrors()){
-            Yii::$app->session->setFlash('message', Yii::t('app',$model->getErrors('email')[0]));
+        } elseif ($model->getErrors()) {
+            Yii::$app->session->setFlash('message', Yii::t('app', $model->getErrors('email')[0]));
         }
 
 
@@ -113,12 +113,14 @@ class SiteController extends Controller
             'model' => $model,
         ]);
     }
-    public function actionAcceptSubscribe(){
-        if( Yii::$app->request->get('email') && Yii::$app->request->get('token')){
+
+    public function actionAcceptSubscribe()
+    {
+        if (Yii::$app->request->get('email') && Yii::$app->request->get('token')) {
             $token = Yii::$app->request->get('token');
             $email = Yii::$app->request->get('email');
             $subscriber = Subscribers::find()->where(['email' => $email])->andWhere(['token' => $token])->one();
-            if($subscriber){
+            if ($subscriber) {
                 $subscriber->active = true;
                 $subscriber->save();
             }
@@ -195,7 +197,7 @@ class SiteController extends Controller
     public function actionAbout()
     {
         $this->layout = 'post';
-        $about = Settings::find()->where(['kay' => ['about_description', 'about_text1', 'about_text2', 'about_text3','about_text4','about_image']])->all();
+        $about = Settings::find()->where(['kay' => ['about_description', 'about_text1', 'about_text2', 'about_text3', 'about_text4', 'about_image']])->all();
 
         return $this->render('about', [
             'about' => $about
@@ -275,12 +277,13 @@ class SiteController extends Controller
 //        ]);
     }
 
-    public function actionSetAge($age){
+    public function actionSetAge($age)
+    {
 
-        if($age == 'yes'){
-            Yii::$app->session->set('18+','yes');
+        if ($age == 'yes') {
+            Yii::$app->session->set('18+', 'yes');
             return $this->goBack('index');
-        }else{
+        } else {
             return $this->render('plus');
         }
     }
@@ -289,7 +292,7 @@ class SiteController extends Controller
     {
         $this->layout = 'post';
         $post = Post::find()->with('media')->where(['id' => $id])->one();
-        $posts = Post::find()->with('media')->orderBy(['id' => SORT_DESC])->limit(3)->all();
+        $posts = Post::find()->with('media')->andWhere(['!=', 'id', $id])->orderBy(['id' => SORT_DESC])->limit(3)->all();
         return $this->render('post', ['post' => $post, 'posts' => $posts]);
     }
 
@@ -298,7 +301,7 @@ class SiteController extends Controller
     {
         $this->layout = 'post';
         $product = Product::find()->with('media')->where(['id' => $id])->one();
-        $products = Product::find()->with('media')->where(['type' => 0])->orderBy(['id' => SORT_DESC])->limit(3)->all();
+        $products = Product::find()->with('media')->where(['type' => 0])->andWhere(['!=', 'id', $id])->orderBy(['id' => SORT_DESC])->limit(3)->all();
         return $this->render('product', ['product' => $product, 'products' => $products]);
     }
 }

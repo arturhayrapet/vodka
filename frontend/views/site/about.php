@@ -9,7 +9,6 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="site-about">
     <h1 style="text-align: center"><?= Yii::t('app', 'About us') ?></h1>
-    <p class="about_desc"><?= isset($about[0]) ? $about[0]->{'value_' . Yii::$app->language} : '' ?></p>
     <div class="container">
         <div class="row">
             <div class="col-md-5 col-xs-12">
@@ -18,6 +17,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 <?php endif; ?>
             </div>
             <div class="col-md-7 col-xs-12">
+                <p class="about_desc"><?= isset($about[0]) ? $about[0]->{'value_' . Yii::$app->language} : '' ?></p>
                 <hr class="abour_hr1">
                 <p><?= isset($about[1]) ? $about[1]->{'value_' . Yii::$app->language} : '' ?></p>
                 <hr class="abour_hr2">
