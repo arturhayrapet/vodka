@@ -178,6 +178,12 @@ header {
     }
 }
 
+@media screen and (min-width: 1367px) {
+    .hero {
+        right: -35%;
+    }
+}
+
 /*end slider*/
 .sec1_bg {
     position: absolute;
@@ -1028,12 +1034,6 @@ a:hover {
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
-}
-
-@media screen and(min-width: 1336px) {
-    .hero {
-        right: -40%;
-    }
 }
 
 .text_line3 {

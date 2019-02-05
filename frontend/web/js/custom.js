@@ -19,13 +19,13 @@ $(function(){
         sl=3;
         i=0;
         yy = ( $("#gallery_slider_wrp").width() - 3* lw ) / 6  ;
-        if ( imgCaunt > 6 ) {
-            slLength = Math.ceil(imgCaunt / 2);
-            uw = (Math.ceil(imgCaunt / 2)) * (lw + yy * 2 + 2);
-        }else {
+        // if ( imgCaunt > 6 ) {
+        //     slLength = Math.ceil(imgCaunt / 2);
+        //     uw = (Math.ceil(imgCaunt / 2)) * (lw + yy * 2 + 2);
+        // }else {
             slLength = imgCaunt ;
             uw = imgCaunt  * (lw + yy * 2 + 2);
-        }
+        // }
 
 
     }
