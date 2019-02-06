@@ -41,12 +41,12 @@ $menus = \frontend\components\Helper::getMenus();
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="/"><img style="	width: 100px;" src="/images/logo_white.png"
+                    <a class="navbar-brand" href="/"><img style="	width: 110px; margin-top: 15px;" src="/images/logo_white.png"
                                                           alt="logo">
                     </a>
                 </div>
                 <div id="navbar5" class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav navbar-right" style="    margin-right: 100px;">
+                    <ul class="nav navbar-nav navbar-right" style=" margin-right: 100px;">
                         <?php foreach ($menus as $menu): ?>
                             <li><a href="<?= $menu->url ?>"><?= $menu->{'name_' . Yii::$app->language} ?></a></li>
                         <?php endforeach; ?>

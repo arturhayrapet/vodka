@@ -14,8 +14,8 @@ $menus = \frontend\components\Helper::getMenus();
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="/"><img style="	width: 120px;     margin-top: 15px;"
-                                                          src="/images/logo.svg" alt="logo">
+                    <a class="navbar-brand" href="/"><img style="	width: 110px;     margin-top: 15px;"
+                                                          src="/images/logo_white.png" alt="logo">
                     </a>
                 </div>
                 <div id="navbar5" class="navbar-collapse collapse">

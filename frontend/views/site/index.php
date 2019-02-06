@@ -197,9 +197,9 @@
                 <p><b><?= isset($subscribe[1]) ? $subscribe[1]->{'value_' . Yii::$app->language} : '' ?></b></p>
                 <p class="sub_text"><?= isset($subscribe[2]) ? $subscribe[2]->{'value_' . Yii::$app->language} : '' ?></p>
 
-                <?php $form = \yii\widgets\ActiveForm::begin(['enableClientValidation' => true]) ?>
+                <?php $form = \yii\widgets\ActiveForm::begin(['enableClientValidation' => false]) ?>
 
-                <?= $form->field($model, 'email')->textInput(['class' => 'sub_input'])->label(false); ?>
+                <?= $form->field($model, 'email')->textInput(['class' => 'sub_input', 'placeholder'=>'email'])->label(false); ?>
 
                 <button type="submit" class="sub_btn"><?= Yii::t('app', 'send') ?></button>
 
